@@ -11,7 +11,7 @@
   "license": "ISC",
   "scripts": {
     "start": "gulp",
-    "watch": "nodemon server.js"
+    "poststart": "npm prune --production"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
