@@ -10,7 +10,8 @@
   "author": "Jason Schmitt",
   "license": "ISC",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "watch": "nodemon server.js"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
