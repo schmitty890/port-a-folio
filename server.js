@@ -54,7 +54,7 @@ app.get('*', function(req, res) {
 /**
  * Start Express server.
  */
-console.log(process.env.PORT);
+console.log('the process.env.PORT is: ' + process.env.PORT);
 app.listen(app.get('port'), () => {
   console.log('%s App is running at http://localhost:%d in %s mode', chalk.green('Success!'), app.get('port'), app.get('env'));
   console.log('  Press CTRL-C to stop\n');
