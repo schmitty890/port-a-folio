@@ -16,7 +16,7 @@ const app = express();
  * Express configuration.
  */
 // set port to 8888
-app.set('port', 8888);
+app.set('port', process.env.PORT || 8888);
 // set the path read the views folder that holds the handlebar html templates
 app.set('views', path.join(__dirname, 'views'));
 // set the teplating engine to render handlebars with default layout and any custom handlebar helper functions
