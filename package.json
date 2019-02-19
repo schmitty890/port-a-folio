@@ -10,12 +10,7 @@
   "author": "Jason Schmitt",
   "license": "ISC",
   "scripts": {
-    "build": "gulp",
-    "start": "node server.js",
-    "lint": "eslint .",
-    "watch": "nodemon server.js",
-    "lint:css": "stylelint public/assets/less/*/*.less --config .stylelintrc",
-    "lint:global": "stylelint build/css/styles.css --config .stylelintrcGlobal"
+    "start": "gulp"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
