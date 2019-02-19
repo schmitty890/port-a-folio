@@ -15,6 +15,7 @@ const app = express();
 /**
  * Express configuration.
  */
+app.set('host', process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0');
 // set port to 8080
 app.set('port', process.env.PORT || 8080);
 // set the path read the views folder that holds the handlebar html templates
