@@ -10,8 +10,7 @@
   "author": "Jason Schmitt",
   "license": "ISC",
   "scripts": {
-    "start": "gulp",
-    "postinstall": "gulp default"
+    "start": "gulp"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
