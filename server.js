@@ -1,14 +1,3 @@
-(function() {
-    var childProcess = require("child_process");
-    var oldSpawn = childProcess.spawn;
-    function mySpawn() {
-        console.log('spawn called');
-        console.log(arguments);
-        var result = oldSpawn.apply(this, arguments);
-        return result;
-    }
-    childProcess.spawn = mySpawn;
-})();
 /**
  * Module dependencies.
  */
@@ -26,9 +15,8 @@ const app = express();
 /**
  * Express configuration.
  */
-app.set('host', process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0');
-// set port to 8080
-app.set('port', process.env.PORT || 8080);
+// set port to 8888
+app.set('port', (process.env.PORT || 8888));
 // set the path read the views folder that holds the handlebar html templates
 app.set('views', path.join(__dirname, 'views'));
 // set the teplating engine to render handlebars with default layout and any custom handlebar helper functions

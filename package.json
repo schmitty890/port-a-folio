@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "Styleguide",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,7 +11,10 @@
   "license": "ISC",
   "scripts": {
     "start": "gulp",
-    "watch": "nodemon server.js"
+    "lint": "eslint .",
+    "watch": "nodemon server.js",
+    "lint:css": "stylelint public/assets/less/*/*.less --config .stylelintrc",
+    "lint:global": "stylelint build/css/styles.css --config .stylelintrcGlobal"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -24,6 +27,7 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.6",
+    "eslint": "^4.19.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^7.0.1",
@@ -36,6 +40,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
-    "run-sequence": "^2.2.1"
+    "run-sequence": "^2.2.1",
+    "stylelint": "^9.9.0"
   }
 }
