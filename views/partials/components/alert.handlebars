@@ -1,0 +1,31 @@
+<div class="flex-item">
+  {{#each hbsObject.pageData.section}}
+    <h2 id="{{this.id}}" class="anchor-link">{{this.title}} <span>#</span></h2>
+    <p>{{this.description}}</p>
+      {{#each code}}
+        <div class="styleguide-code">
+          <div class="msg {{this.alert-class}}" role="alert" aria-live="assertive">
+            <div class="msg__icon" aria-label="{{this.aria-label}}"></div>
+            <div class="msg__body">
+              {{#if this.close}}
+                <div class="msg__close">
+                  <button class="close-x" type="button" aria-label="Close"></button>
+                </div>
+              {{/if}}
+              <p class="msg__title">{{this.title}}</p>
+              <p class="msg__message">{{this.message}}</p>
+            </div>
+          </div>
+        </div>
+        {{!-- code snippet --}}
+        <div class="code-snippet" style="margin-bottom: 25px;">
+          <pre class="code-to-copy">
+            <code class="language-markup"></code>
+          </pre>
+          {{!-- copy to clipboard --}}
+          <i title="Copy That Snippet!" class="fa fa-clipboard copy"></i>
+        </div>
+        <hr>
+      {{/each}}
+  {{/each}}
+</div>

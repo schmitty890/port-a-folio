@@ -1,0 +1,35 @@
+{
+  "menu": {
+    "categories": [{
+      "title": "Getting Started",
+      "show": true,
+      "link": "/getting-started"
+    },{
+      "title": "Styles",
+      "show": false,
+      "link": "#",
+      "sublinks": [{
+        "title": "overview",
+        "link": "/styles/overview"
+      },{
+        "title": "colors",
+        "link": "/styles/colors"
+      }]
+    }, {
+      "title": "Components",
+      "show": true,
+      "link": "#",
+      "sublinks": [{
+        "title": "overview",
+        "link": "/components/overview"
+      }, {
+        "title": "alerts",
+        "link": "/components/alerts"
+      }]
+    }, {
+      "title": "Release Notes",
+      "show": true,
+      "link": "/release-notes"
+    }]
+  }
+}

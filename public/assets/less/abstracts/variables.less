@@ -1,0 +1,288 @@
+
+@color-red: #FF0000;
+
+// Breakpoints
+@breakpointXSMin: 320px;
+@breakpointXSMax: 767px;
+@breakpointSMMin: 678px;
+@breakpointSMMax: 1024px;
+@breakpointMDMin: 1025px;
+@breakpointMDMAX: 1295px;
+@breakpointLGMin: 1296px;
+
+// Media Queries
+@mobile: ~"only screen and (max-width: 767px)";
+@tablet: ~"only screen and (min-width: 768px) and (max-width: 1024px)";
+@mobile-and-tablet: ~"only screen and (max-width: 1024px)";
+@desktop: ~"only screen and (min-width: 1025px) and (max-width: 1295px)";
+
+// Mobile First Media Query Breakpoints
+@phone-xl-and-up: ~"only screen and (min-width: 480px)";
+@tablet-and-up: ~"only screen and (min-width: 768px)";
+@desktop-and-up: ~"only screen and (min-width: 1025px)";
+@desktop-xl: ~"only screen and (min-width: 1296px)";
+
+//-------------------------------------
+// SITE ID
+//-------------------------------------
+//-------------------------------------
+// SITE STATE NAMESPACE PREFIXES
+//-------------------------------------
+
+@site-state-responsive: r_s; // site is responsive
+@site-state-fullsite: f_s; // site is NOT responsive
+@site-state-guest: g_c; // our content is hosted on someone else's site. we're guest content.
+
+@site-state: @site-state-responsive; // default site state to write conditional logic into CSS files
+
+//-------------------------------------
+// Colors
+//-------------------------------------
+
+// primary lob-specific colors
+@color-broadcort: #006B87;
+@color-affluent: #2b4f91;
+@color-edge: #009cde;
+@color-edge-alt: #0073cf;
+@color-edge-alt-offset: #b6dcfc;
+@color-advisory: #012169;
+@color-advisory-alt: #000a23;
+@color-ml: #0052c2;
+@color-bank: #dc1431;
+@color-bank-alt: #c41230;
+@color-accent-light: #ea7600;
+@color-accent: #b94700;
+
+// shades of gray
+@color-gray-lightest: #f9f7f4;
+@color-gray-lighter: #ece6dd;
+@color-gray-light: #d1c9c0;
+@color-gray: #9d8e80;
+@color-gray-dark: #857363;
+@color-gray-darker: #6b5e51;
+@color-gray-darkest: #524940;
+
+// true gray
+@color-true-gray: #666666;
+@color-true-gray-dark: #333333;
+
+@color-pale-blue: #ECF6FD;
+@color-white: #FFF;
+@color-black: #000;
+
+// contextual
+@color-dark-copy: #000;
+@color-body-copy: #333;
+@color-light-copy: #666;
+@color-faded-copy: #070;
+@color-success: #070;
+@color-info: @color-edge-alt;
+@color-warning: @color-accent;
+@color-error: #C00;
+@color-pale-error: #f9dee1;
+@color-pale-warning: #fcf0e6;
+@color-pale-success: #eef6e6;
+@color-pale-info: @color-pale-blue;
+
+
+//-------------------------------------
+// MACRO GRID
+//-------------------------------------
+
+// resolution breakpoints
+@grid-viewport-sm-min: 320px;
+@grid-viewport-sm-max: 767px;
+@grid-viewport-md-min: 768px;
+@grid-viewport-md-max: 1024px;
+@grid-viewport-lg-min: 1025px;
+@grid-viewport-lg-max: 1295px;
+@grid-viewport-xl-min: 1296px;
+
+// grid configuration
+@grid-container-min: @grid-viewport-sm-min;
+@grid-container-max: @grid-viewport-xl-min;
+@ullsite-container-width: 1020px;
+@grid-columns: 12;
+@grid-gutter-xs: 10px;
+@grid-gutter-sm: 15px;
+@grid-gutter-md: 20px;
+
+//-------------------------------------
+// TYPOGRAPHY
+//-------------------------------------
+
+// typeface collection
+@type-sans-serif: 'Helvetica Neue', Helvetica, Arial, Roboto, 'Open Sans', sans-serif;
+@type-brand: Connections, Calibri, sans-serif;
+
+// typeface weights
+@type-weight-light: 300;
+@type-weight-regular: 400;
+@type-weight-medium: 500;
+@type-weight-bold: 600;
+
+// typeface leading (line height)
+@type-leading-none: 1;
+@type-leading-xs: 1.15;
+@type-leading-sm: 1.25;
+@type-leading-md: 1.5;
+@type-leading-lg: 1.75;
+@type-leading-xl: 2;
+
+// typeface size
+@type-size-base: 14px; // Body text on smaller screens
+@type-size-scale: 1.12; // Scaling factor for smaller screens
+
+@type-size-base-lg-scr: 14px; // Body text on larger screens
+@type-size-scale-lg-scr: 1.2; // Scaling factor for larger screens
+@type-size-lg-scr-min: @grid-viewport-md-min; // Definition of larger screen
+
+// type sizes for smaller screens
+@type-size-1: @type-size-base; // 14px;
+@type-size-xs: (floor(@type-size-1 / @type-size-scale, 4)) - 2; // 10px
+@type-size-0: floor(@type-size-1 / @type-size-scale, 4); // 12px
+@type-size-2: floor(@type-size-1 * @type-size-scale, 4); // 16px
+@type-size-3: floor(@type-size-2 * @type-size-scale, 4); // 18px
+@type-size-4: floor(@type-size-3 * @type-size-scale, 4); // 20px
+@type-size-5: floor(@type-size-4 * @type-size-scale, 4); // 22px
+@type-size-6: floor(@type-size-5 * @type-size-scale, 4); // 25px
+@type-size-xl: 30px;
+@type-size-xxl: 36px;
+
+// type sizes for larger screens
+@type-size-0-lg-scr: round(1rem / @type-size-scale-lg-scr, 4);
+@type-size-1-lg-scr: @type-size-base;
+@type-size-2-lg-scr: round(@type-size-1-lg-scr * @type-size-scale-lg-scr, 4);
+@type-size-3-lg-scr: round(@type-size-2-lg-scr * @type-size-scale-lg-scr, 4);
+@type-size-4-lg-scr: round(@type-size-3-lg-scr * @type-size-scale-lg-scr, 4);
+@type-size-5-lg-scr: round(@type-size-4-lg-scr * @type-size-scale-lg-scr, 4);
+@type-size-6-lg-scr: round(@type-size-5-lg-scr * @type-size-scale-lg-scr, 4);
+
+//-------------------------------------
+// MICRO GRID
+// These variables will help us define consistent
+// spacing system (padding & margins) across the site.
+//-------------------------------------
+
+@space-0: 0;
+@space-xxxs: round((@type-size-base * 0.20), 0); // 3px
+@space-xxs: round((@type-size-base * 0.33), 0); // 5px
+@space-xs: round((@type-size-base * 0.70), 0); // 10px
+@space-sm: round((@type-size-base * 1.05), 0); // 15px
+@space-md: round((@type-size-base * 1.40), 0); // 20px
+@space-lg: round((@type-size-base * 1.75), 0); // 25px
+@space-xl: round((@type-size-base * 2.15), 0); // 30px
+@space-xxl: round((@type-size-base * 2.5), 0); // 35px
+@space-xxxl: round((@type-size-base * 2.85), 0); // 40px
+
+//-------------------------------------
+// BUTTON ARRANGEMENT
+//-------------------------------------
+@base-btn-y: @space-xxs;
+@base-btn-x: @space-md;
+
+//-------------------------------------
+// LAYER ARRANGEMENT
+//-------------------------------------
+@z-index-back: -1;
+@z-index-auto: auto;
+@z-index-regular: 0;
+@z-index-front: 1;
+@z-index-tooltip: 9;
+@z-index-layer: 99;
+@z-index-popup: 100;
+@z-index-stickable: 101;
+@z-index-overlay: 999;
+@z-index-modal: 1000;
+
+//-------------------------------------
+// BODY TEXT
+//-------------------------------------
+@base-type: @type-sans-serif;
+@base-type-leading: @type-leading-md;
+@base-type-color: @color-body-copy;
+@base-type-weight: @type-weight-regular;
+
+// base-type-size will be handled using @type-size-... variables and media queries
+
+@para-margin: 0 0 .5em;
+
+//-------------------------------------
+// HEADINGS
+//-------------------------------------
+@apply-new-heading-styles: true;
+@heading-type: @type-brand;
+@heading-type-leading: @type-leading-xs;
+
+// sizes will be handled using @type-size-... variables and media queries
+
+//-------------------------------------
+// HYPERLINKS
+//-------------------------------------
+@link-type-color: @color-ml;
+@link-description: none;
+@link-type-color-hover: @color-advisory;
+@link-decoration-on-hover: underline;
+
+//-------------------------------------
+// SITE HEADER
+//-------------------------------------
+@site-header-flagscape-bg: ''; // Defined in branding variable files.
+@site-header-fap-switch: false;
+
+//-------------------------------------
+// SITE LOGO
+//-------------------------------------
+@site-logo-bg: '';
+@site-print-logo-bg: '';
+@site-logo-height: '';
+@site-logo-width: '';
+
+//-------------------------------------
+// NAVBAR
+//-------------------------------------
+@navbar-sticky-container: nav-bar__sqt-sm;
+@site-notification-items-width: 50%;
+
+//-------------------------------------
+// SITE-STAGE
+//-------------------------------------
+@site-stage-bg: none;
+@site-stage-margin-top: lg;
+@site-stage-margin-bottom: xl;
+@site-stage-padding-top: 0;
+@site-stage-padding-bottom: 0;
+
+//-------------------------------------
+// SITE-FOOTER
+//-------------------------------------
+@site-footer-bg-color: @color-gray-lightest;
+
+//-------------------------------------
+// MISCELLANIOUS
+//-------------------------------------
+@trefis-widget-display: none;
+// combined height of site ribbon, site-header and site-nav
+@masthead-height: 145px;
+@nav-drawer-min-height: 100px;
+
+//-------------------------------------
+// Login Widget
+//-------------------------------------
+@login-body-bg: @color-ml;
+@login-btn-bg: @color-ml;
+@login-btn-bg-hover: @color-advisory;
+@login-save-ID-checkbox-bg: @color-white;
+@login-save-ID-checkbox-check-color: @color-ml;
+
+
+
+
+
+
+
+
+
+
+
+

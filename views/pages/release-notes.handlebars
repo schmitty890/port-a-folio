@@ -1,0 +1,44 @@
+<main role="main">
+<div class="l-container">
+  {{> styleguide-template-general/c-page-header}}
+  <div class="site-layout site-layout--primary">
+    <div class="site-layout__stage" id="siteStageContainer">
+    <main class="site-stage">
+      <div class="container">
+      <section class="template template--fullwidth">
+        <div class="template__primary">
+          <div id="release-notes" class="flex-space-apart flex-layout-2col">
+            <!-- Release Notes -->
+            {{#each hbsObject.pageData.release-notes.release}}
+              {{#if this.show}}
+                <div style="position: relative;" class="">
+                  <div style="float:left; padding-right: 40px; color: gray;" class="">
+                    {{this.version}}
+                  </div>
+                  <div class="">
+                    <h4 class="bold">
+                      {{this.title}}
+                    </h4>
+                    <p class="" style="margin-left: 75px; color: gray;">{{this.date}}</p>
+                    {{#if this.items}}
+                    <ul style="margin-left: 75px;">
+                      {{#each items}}
+                        <li class=""><span class="{{classcheck this.change}} bold">{{#if this.change}}{{this.change}}:{{/if}}</span> {{this.list-item}}</li>
+                      {{/each}}
+                    </ul>
+                    {{/if}}
+                  </div>
+                </div>
+                <hr>
+              {{/if}}
+            {{/each}}
+            <!-- End Release Notes -->
+          </div>
+        </div>
+      </section>
+      </div>
+    </main>
+    </div>
+  </div>
+</div>
+</main>

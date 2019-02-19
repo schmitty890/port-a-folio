@@ -1,0 +1,94 @@
+{
+  "title": "Style Guide | Components",
+  "header": {
+    "headerTitle": "Components",
+    "headerDescription": "Components are listed here, this componentsData.json file is a json object that holds all the individual component information to be displayed in a consistent format for end users."
+  },
+  "components": {
+    "overview": {
+      "show": true,
+      "title": "overview",
+      "status-color": "",
+      "status": "",
+      "version": "v0.1",
+      "last-updated": "01/27/2019",
+      "description": "Overview description."
+    },
+    "alerts": {
+      "show": true,
+      "title": "alerts",
+      "status-color": "green",
+      "status": "Ready to use",
+      "version": "v0.1",
+      "last-updated": "01/25/2019",
+      "description": "Use Alerts pattern to notify user about any state change in your application. The change of state can be informational, success event, failure event or of warning in nature. By default, alerts shows a state associated icon and a close button to terminate alert message. Both of which can be configured not to display. Finally, you also configure alerts take lesser or greater space in your layout based upon your visual design needs.",
+      "section": [
+        {
+          "title": "States",
+          "id": "states",
+          "description": "Default alert notification state is error; you can change it to be either informational, success or warning.",
+          "code": [
+            {
+              "alert-class": "msg--state-error",
+              "aria-label": "Error",
+              "title": "Processing error",
+              "message": "An error occurred while attempting to process your payment. Please try again later.",
+              "close": true,
+              "snippet": "<pre><code class=\"language-css\">p { color: red }</code></pre>"
+            },{
+              "alert-class": "msg--state-success",
+              "aria-label": "Success",
+              "title": "Pay To account added",
+              "message": "you've successfully added Duke Energy as a Pay To account",
+              "close": true,
+              "snippet": ""
+            },{
+              "alert-class": "msg--state-info",
+              "aria-label": "Information",
+              "title": "Payment processing",
+              "message": "Normal processing times for payments made through Bill Pay are 2-3 business days. Please allow sufficient time to pass before contacting Customer Service.",
+              "close": true,
+              "snippet": ""
+            },{
+              "alert-class": "msg--state-warning",
+              "aria-label": "Warning",
+              "title": "Duplicate payment",
+              "message": "An identical payment has already been made to this account this billing period. Please review your accounts to see if this payment was made in error.",
+              "close": true,
+              "snippet": ""
+            }
+          ]
+        },{
+          "title": "Size",
+          "id": "size",
+          "description": "Alerts are configured to be displayed in medium size. As you increase or decrease alert layout size, font size and padding around it adjusts.",
+          "code": [
+            {
+              "alert-class": "msg--state-error",
+              "aria-label": "Error",
+              "title": "Processing error",
+              "message": "An error occurred while attempting to process your payment. Please try again later.",
+              "close": true,
+              "snippet": ""
+            },{
+              "alert-class": "msg--state-error msg--size-lg",
+              "aria-label": "Error",
+              "title": "Processing error",
+              "message": "An error occurred while attempting to process your payment. Please try again later.",
+              "close": true,
+              "snippet": ""
+            },{
+              "alert-class": "msg--state-error msg--size-sm",
+              "aria-label": "Error",
+              "title": "Processing error",
+              "message": "An error occurred while attempting to process your payment. Please try again later.",
+              "close": true,
+              "snippet": ""
+            }
+          ]
+        }
+      ]
+    }
+
+  }
+}

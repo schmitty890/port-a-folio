@@ -1,0 +1,385 @@
+.msg {
+  background-color: @color-white;
+  border: 1px solid transparent;
+  display: flex;
+  justify-content: space-between;
+  /*to offset close button against the edges of alerts*/
+  position: relative;
+  .margin(bottom, sm);
+
+  .msg__icon,
+  .msg__body {
+    .padding(all, xs);
+    .padding(right, md);
+  }
+
+  .msg__icon {
+    flex: 0 0 75px;
+    -ms-flex-preferred-size: 45px; // IE doesn't take padding into account so we factor that in here
+    background: ~'transparent none no-repeat center center / 25px 25px';
+  }
+
+  .msg__body {
+    //To escape less calculation of 100% - 75px
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: ~"calc(100% - 75px)";
+    :last-child {
+      .margin(bottom, 0);
+    }
+  }
+
+  .msg__title {
+    font-weight: @type-weight-bold;
+  }
+
+  .msg__message {
+    position: relative;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: @space-xl;
+  }
+
+  .msg__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &.msg--state-error {
+    border-color: @color-error;
+
+    .msg__icon {
+      background-color: @color-pale-error;
+      background-image: url(/public/assets/images/bg--svgs/icon--state-error.svg);
+    }
+
+    .msg__title {
+      color: @color-error;
+    }
+  }
+
+  &.msg--state-success {
+    border-color: @color-success;
+
+    .msg__icon {
+      background-color: @color-pale-success;
+      background-image: url(/public/assets/images/bg--svgs/icon--state-success.svg);
+    }
+  }
+
+  &.msg--state-info {
+    border-color: @color-info;
+
+    .msg__icon {
+      background-color: @color-pale-info;
+      background-image: url(/public/assets/images/bg--svgs/icon--state-info.svg);
+    }
+  }
+
+  &.msg--state-warning {
+    border-color: @color-warning;
+
+    .msg__icon {
+      background-color: @color-pale-warning;
+      background-image: url(/public/assets/images/bg--svgs/icon--state-warning.svg);
+    }
+  }
+
+  &.msg--state-flash {
+    .msg__icon {
+      flex: 1 1 75px;
+      background: ~'url(bg--svgs/icon--asterick-edge.svg) no-repeat center / 70px 70px';
+    }
+  }
+
+  &.msg--size-lg {
+    .msg__icon,
+    .msg__body {
+      .padding(all, md);
+    }
+
+    .msg__icon {
+      flex: 1 1 100px;
+      -ms-flex-preferred-size: 60px; // IE doesn't take padding into account so we factor that in here
+      background-size: 40px 40px;
+      background-position: center center;
+    }
+
+    .msg__body {
+      //To excape less calculation of 100% - 100px
+      flex: ~"1 1 calc(100% - 100px)";
+      -ms-flex-preferred-size: ~'calc(100% - 100px)';
+      .padding(right, xl);
+    }
+
+    .msg__title {
+      font-size: @type-size-3;
+    }
+  }
+
+  &.msg--size-sm {
+    border-left: 0;
+    border-right: 0;
+
+    .msg__icon,
+    .msg__body {
+      .padding(all, xs);
+      .padding(right, md);
+    }
+
+    .msg__icon {
+      flex: 1 1 50px;
+      -ms-flex-preferred-size: 30px; // IE doesn't take padding into account so we factor that in here
+      background-size: 20px 20px;
+    }
+
+    .msg__body {
+      //To excape less calculation of 100% - 50px
+      flex: ~"1 1 calc(100% - 50px)";
+      -ms-flex-preferred-size: ~'calc(100% - 50px)';
+      .padding(right, xl);
+      font-size: @type-size-0;
+    }
+  }
+
+  &.msg--state-help {
+    border-color: @color-info;
+    background-color: @color-pale-info;
+  }
+
+  &.msg__tooltip {
+    position: relative;
+    display: block;
+    margin: 0 auto 15px;
+    max-width: 450px;
+    min-width: 250px;
+    z-index: @z-index-modal;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.25);
+
+    &.tooltip-abs {
+      position: absolute;
+    }
+
+    &.tooltip--fixed {
+      position: fixed;
+    }
+
+    // creates default position to be on top of element
+    &.tooltip--fixed,
+    &.tooltip-abs {
+      &:not(.msg__tooltip--layout-modal):not([class*="tooltip--d"]) {
+        bottom: ~'calc(100% - 10px)';
+        left: 10px; // acts as margin
+        right: 10px; // acts as margin
+      }
+    }
+
+    .msg__title {
+      font-weight: @type-weight-bold;
+      font-size: @type-size-2;
+    }
+
+    // offset to place tooltip arrow away from sides
+    @arrowOffset: 11px;
+    @arrowOffsetX: 19px;
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: 20px;
+      right: 0;
+      left: 0;
+      bottom: -@arrowOffset;
+      margin: auto auto 0;
+      width: 20px;
+      height: 20px;
+      background-color: @color-pale-blue;
+      border-right: 1px solid @color-edge-alt;
+      border-bottom: 1px solid @color-edge-alt;
+      transform: translateZ(0) rotate(45deg);
+      backface-visibility: hidden;
+      -webkit-font-smoothing: subpixel-antialiased;
+      z-index: -1;
+    }
+
+    // bottom side arrows
+    &.tooltip--dbottomright:after {
+      right: 20px;
+      left: auto;
+      top: auto;
+      margin: auto;
+    }
+
+    &.tooltip--dbottomleft:after {
+      left: 20px;
+      right: auto;
+      top: auto;
+      margin: auto;
+    }
+
+    // left side arrows
+    &.tooltip--dleft:after {
+      left: -@arrowOffset;
+      right: auto;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      transform: rotate(135deg);
+    }
+
+    &.tooltip--dlefttop:after {
+      left: -@arrowOffset;
+      right: auto;
+      bottom: auto;
+      top: @arrowOffsetX;
+      margin: auto;
+      transform: rotate(135deg);
+    }
+
+    &.tooltip--dleftbottom:after {
+      left: -@arrowOffset;
+      right: auto;
+      top: auto;
+      bottom: @arrowOffsetX;
+      margin: auto;
+      transform: rotate(135deg);
+    }
+
+    // right side arrows
+    &.tooltip--dright:after {
+      right: -@arrowOffset;
+      left: auto;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      transform: translateZ(0) rotate(-45deg);
+    }
+
+    &.tooltip--drighttop:after {
+      right: -@arrowOffset;
+      left: auto;
+      bottom: auto;
+      top: @arrowOffsetX;
+      margin: auto;
+      transform: translateZ(0) rotate(-45deg);
+    }
+
+    &.tooltip-drightbottom:after {
+      right: -@arrowOffset;
+      left: auto;
+      top: auto;
+      bottom: @arrowOffsetX;
+      margin: auto;
+      transform: translateZ(0) rotate(-45deg);
+    }
+
+    // top side arrows
+    &.tooltip--dtop:after {
+      top: -@arrowOffset;
+      bottom: auto;
+      margin: auto;
+      transform: translateZ(0) rotate(-135deg);
+    }
+
+    &.tooltip-dtopright:after {
+      top: -@arrowOffset;
+      right: 20px;
+      left: auto;
+      bottom: auto;
+      margin: auto;
+      transform: translateZ(0) rotate(-135deg);
+    }
+
+    &.tooltip-dtopleft:after {
+      top: -@arrowOffset;
+      right: 20px;
+      left: auto;
+      bottom: auto;
+      margin: auto;
+      transform: translateZ(0) rotate(-135deg);
+    }
+
+  }
+
+  &.msg__tooltip--layout-modal {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 90%;
+    max-height: 80%;
+    margin: auto;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    &.tooltip--abs {
+      position: fixed;
+    }
+
+    &:before {
+      content: ' ';
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0,0,0,.75);
+      z-index: -1;
+    }
+
+    &:after {
+      display: none;
+    }
+
+    .msg__body {
+      position: relative;
+      margin: auto;
+      max-height: 100%;
+      border-color: @color-info;
+      background-color: @color-pale-info;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

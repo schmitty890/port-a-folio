@@ -1,0 +1,43 @@
+.padding(@directions: all, @size: md) when (@directions = all) {
+  .macro-spacing-helper(padding, @size);
+}
+
+.padding(@directions: all, @size: md) when (@directions = x) {
+  .macro-spacing-helper(padding-left, @size);
+  .macro-spacing-helper(padding-right, @size);
+}
+
+.padding(@directions: all, @size: md) when (@directions = y) {
+  .macro-spacing-helper(padding-top, @size);
+  .macro-spacing-helper(padding-bottom, @size);
+}
+
+.padding(@directions: all, @size: md) when
+  (@directions = left) or (@directions = right) or (@directions = top) or (@directions = bottom) {
+  .macro-spacing-helper(~'padding-@{directions}', @size);
+}
+
+.margin(@directions: all, @size: md) when (@directions = all) {
+  .macro-spacing-helper(margin, @size);
+}
+
+.margin(@directions: all, @size: md) when (@directions = x) {
+  .macro-spacing-helper(margin-left, @size);
+  .macro-spacing-helper(margin-right, @size);
+}
+
+.margin(@directions: all, @size: md) when (@directions = y) {
+  .macro-spacing-helper(margin-top, @size);
+  .macro-spacing-helper(margin-bottom, @size);
+}
+
+.margin(@directions: all, @size: md) when
+  (@directions = left) or (@directions = right) or (@directions = top) or (@directions = bottom) {
+  .macro-spacing-helper(~'margin-@{directions}', @size);
+}
+
+//Meant for use within micro-grid.less file.
+//DO NOT use outside.
+.macro-spacing-helper(@attribute, @unit) {
+  @{attribute}: ~'@{space-@{unit}}';
+}

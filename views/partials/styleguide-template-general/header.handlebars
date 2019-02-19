@@ -1,0 +1,49 @@
+<div class="l-page-layout__secondary">
+  <header class="c-header c-header--vertical" role="banner">
+    <div class="c-header__inner">
+      <h3 class="c-logo">
+        <a href="/" class="c-logo__link" rel="home">
+        <a href="#"><img src="/public/assets/images/logo-placeholder.png" style="height: 80px; width: 300px;"></a>
+        <!--end .c-header__logo-->
+        </a><!--end c-logo__link-->
+      </h3>
+      <!--end c-logo-->
+      <button class="c-btn c-btn--small c-header__nav-btn js-nav-trigger" aria-expanded="false">Menu</button>
+      <div class="c-header__nav-container js-nav-panel">
+        <nav class="c-primary-nav" role="navigation">
+          <ul class="c-primary-nav__list c-primary-nav__list--flush js-nav-panel" role="tablist" aria-multiselectable="true">
+            {{#each hbsObject.nav.menu.categories}}
+              {{#if this.show}}
+                <li class="c-primary-nav__item">
+                {{#if this.sublinks}}
+                  <a class="c-primary-nav__link c-primary-nav__link--has-children js-nav-dropdown-trigger " href="{{this.link}}" role="button" tabindex="0">
+                    <span class="c-primary-nav__text">{{this.title}}</span>
+                    <div class="c-icon c-primary-nav__icon">
+                      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+                  </a>
+                  {{else}}
+                  <a href="{{this.link}}" class="c-primary-nav__link ">
+                    <span class="c-primary-nav__text">{{this.title}}</span>
+                  </a>
+                {{/if}}
+
+                {{#if this.sublinks}}
+                  <ul class="c-primary-nav__sublist js-nav-dropdown">
+                    {{#each this.sublinks}}
+                      <li class="c-primary-nav__subitem ">
+                        <a class="c-primary-nav__sublink " href="{{this.link}}">{{this.title}}</a>
+                      </li>
+                    {{/each}}
+                  </ul>
+                {{/if}}
+                </li>
+              {{/if}}
+            {{/each}}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+</div>
+

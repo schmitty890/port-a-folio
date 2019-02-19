@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{hbsObject.pageData.title}}</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all" type="text/css" />
+    <!-- built out css styleguide-styles -->
+    <link rel="stylesheet" href="/build/css/styleguide-styles.min.css" type="text/css">
+    <!-- built out css prototype css styles -->
+    <link rel="stylesheet" href="/build/css/styles.min.css" type="text/css">
+    <!-- prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css" />
+    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-coy.min.css" /> --}}
+    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-dark.min.css" /> --}}
+    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-funky.min.css" /> --}}
+    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-solarizedlight.min.css" /> --}}
+    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-tomorrow.min.css" /> --}}
+    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-twilight.min.css" /> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css" />
+    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.css" /> --}}
+  </head>
+  <body>
+    <div class="l-page-layout l-page-layout--two-column-fixed">
+      {{> styleguide-template-general/header}}
+      <div class="l-page-layout__main">
+        {{{body}}}
+        {{> styleguide-template-general/footer}}
+        {{> styleguide-template-general/scripts}}
+      </div>
+    </div>
+  </body>
+</html>

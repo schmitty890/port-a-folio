@@ -1,0 +1,26 @@
+.code-snippet {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.code-to-copy {
+  margin-left: -120px !important;
+}
+
+.copy {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition : border 200ms ease-in;
+
+  &:hover {
+    border: 2px solid #f92672;
+    transition : border 200ms ease-out;
+  }
+}
