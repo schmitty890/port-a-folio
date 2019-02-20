@@ -1,0 +1,17 @@
+[{
+    "company": "brooks bell",
+    "title" : "software engineer",
+    "startDate" : "07/31/2017",
+    "endDate": "present",
+    "city": "raleigh",
+    "state": "north carolina",
+    "desc": [{
+      "show": "true",
+      "copy": "Here I was a software engineer"
+    }]
+},
+{
+    "name" : "Kyle",
+    "age" : "21",
+    "gender" : "male"
+}];

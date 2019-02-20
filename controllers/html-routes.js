@@ -1,7 +1,7 @@
 var indexData = require('../data/indexData.json');
 var gettingStartedData = require('../data/gettingStartedData.json');
 var guidelinesData = require('../data/guidelinesData.json');
-var stylesData = require('../data/stylesData.json');
+// var stylesData = require('../data/stylesData.json');
 var componentsData = require('../data/componentsData');
 var navigation = require('../data/navigation.json');
 var releaseNotesData = require('../data/releaseNotesData.json');

@@ -1,0 +1,90 @@
+{
+    "jobs": [{
+        "company": "brooks bell",
+        "title" : "javascript developer",
+        "startDate" : "July 2017",
+        "endDate": "February 2018",
+        "city": "raleigh",
+        "state": "north carolina",
+        "logo": "https://media.glassdoor.com/sqll/247760/brooks-bell-squarelogo-1464986694299.png",
+        "desc": {
+            "show": true,
+            "copy": "Employed as a JavaScript Developer, I am responsible for delivering front end web solutions for clients of Brooks Bell using primarily Adobe Target, as well as Optimizely and Monetate. Serving as the tech lead of Adobe Target mentoring a team of junior developers.<br><br>"
+        },
+        "responsibilities": {
+            "show": true,
+            "copy": "a-b test developer",
+            "list": [
+                "Facilitated Adobe Target campaign launches.",
+                "Implemented A/B Testing strategy for high volume Adobe Target campaign pushes.",
+                "Wrote a/b tests for SunTrust, Barnes & Noble, Toys R Us, Uber, American Express, Clinique, Nickelodeon and Oppenheimer Funds.",
+                "Train and mentor Junior/Intermediate level developers dom manipulation, modular javascript, css, a/b testing process, Adobe Target.",
+                "Adobe Target SME. Train developers and project managers on how to use Adobe Target.",
+                "Utilized Optimizely and Monetate as content delivery networks for a/b test scripts.",
+                "Utilized git version control",
+                "Implemented code review process for Junior/Intermediate developers.",
+                "Preformed code reviews for Junior/Intermediate developers.",
+                "Interviewed candidates for full-time positions from a technical perspective."
+            ]
+        }
+    },{
+        "company": "lowe's home improvement",
+        "title" : "software developer",
+        "startDate" : "January 2015",
+        "endDate": "July 2017",
+        "city": "mooresville",
+        "state": "north carolina",
+        "logo": "https://img.grouponcdn.com/coupons/cCQ8NrxHNJAVMT9b5mmHh3/lowes-highres-500x500",
+        "desc": {
+            "show": true,
+            "copy": "Employed as a software developer, I was responsible for daily content updates, projects, a/b test development and analytics.<br><br>"
+        },
+        "responsibilities": {
+            "show": true,
+            "copy": "front end developer on the fed team",
+            "list": [
+                "Contributor to a team of developers and worked along side business partners to successfully implement an A/B testing process.",
+                "Research, analysis and development of front-end solutions and enhancements to lowes.com within a Kanban framework.",
+                "Develop solutions on top of Adobe Experience Manager (Adobe CQ, Adobe Test & Target, Adobe Recommendations, Adobe Sitecatalyst, Adobe Dynamic Tag Manager) to support business needs.",
+                "Agile SCRUM Development environment.",
+                "Utilize Atlassian Jira for agile project tracking.",
+                "Utilize Atlassian Confluence for documentation.",
+                "Utilized git version control.",
+                "Lead developer of A/B Tests on www.lowes.com and m.lowes.com utilizing Adobe Test and Target.",
+                "Advanced Integration between Frontend and Backend services using JSON and XML.",
+                "Contributor of analytics tagging on www.lowes.com and m.lowes.com utilizing Adobe DTM.",
+                "Broke down code for non-technical clients, provide extensive Q/A knowledge and testing, and manage tasking for our team.",
+                "Contributed to Lowes.com redesign, released in 2016.",
+                "Lead developer for front-end implementation of promotions and static content updates, site wide, released on a daily cadence. ",
+                "Debugged and provided solutions for impediments and small enhancements to lowes.com and m.lowes.com using Charles Proxy, HTML, CSS, JS, jQuery, handlebars and nodejs.",
+                "Participated in daily standup, quad sessions, story grooming sessions, sprint planning and sprint retrospectives.",
+                "Worked with others to develop and utilize user chat implementation for lowesforpros.com and lowes.com using Adobe DTM, live-person, javascript, html and css.",
+                "Mentor and Train Junior level developers.",
+                "Interviewed candidates for full-time positions from a technical perspective."
+            ]
+        }
+    },{
+        "company": "freelance",
+        "title" : "freelance web developer",
+        "startDate" : "2011",
+        "endDate": "2017",
+        "city": "cary",
+        "state": "north carolina",
+        "logo": "http://www.charbase.com/images/glyph/9634",
+        "desc": {
+            "show": true,
+            "copy": "During freelancing, I worked on a number of websites and side projects. These ranged from local pizzeria's to small weather app side projects.<br><br>"
+        },
+        "responsibilities": {
+            "show": true,
+            "copy": "web dev for cozzolinos",
+            "list": [
+                "Design and develop, as well as provide creative copy for static websites.",
+                "Specializing in HTML / CSS / Adobe Photoshop/Illustrator",
+                "JavaScript (jQuery) / AJAX to build the front-end",
+                "Created email marketing campaigns",
+                "Created advertisements for both the web and print."
+            ]
+        }
+    }]
+}

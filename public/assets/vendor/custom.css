@@ -1,0 +1,48 @@
+/* ----------------------------------
+Jolpai
+Version: 1.0
+Author: DynamicWebLab
+
+-------------------------------------
+
+Table of contents
+
+  @ Custom Styles
+
+*/
+
+
+/* ====================
+  Main Styles
+=======================*/
+/*li:nth-child(n+4) {
+    color: red;
+}*/
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.service-img {
+	height: 50px;
+	margin-bottom: 20px;
+}
+
+.about-img img {
+	border: 5px solid black;
+	border-radius: 3px;
+	height: 250px;
+}
+
+.and-more {
+	text-align: center;
+	margin-top: 50px;
+}
