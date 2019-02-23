@@ -19,4 +19,15 @@ module.exports = function (app) {
     res.send(jobs);
   });
 
+  // Weather Page
+  app.get('/weather', function (req, res) {
+    var hbsObject = {
+    };
+    console.log(hbsObject);
+    // console.log(hbsObject);
+    res.render('weather', {
+      hbsObject: hbsObject
+    });
+  });
+
 };
