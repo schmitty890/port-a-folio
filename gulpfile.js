@@ -14,6 +14,11 @@ const babel = require('gulp-babel');
 const less = require('gulp-less');
 const autoprefixer = require('gulp-autoprefixer');
 
+
+gulp.task('travis', ['clean', 'serve'], function() {
+  process.exit(0);
+});
+
 // default gulp task that runs clean and then serve tasks
 gulp.task('default', function(done) {
   runSequence('clean', 'serve', function() {
