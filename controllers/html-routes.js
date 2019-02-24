@@ -33,13 +33,11 @@ module.exports = function (app) {
 
 
   app.get('/api/weather', function(req, res) {
-    console.log('we here');
     var openWeatherCreds = {
       apiKey: process.env.openWeatherMap,
-      zipcode: 08619,
-      city: 'Trenton'
-    }
-    var queryURLweather = 'https://api.openweathermap.org/data/2.5/weather?zip=' + openWeatherCreds.zipcode + '&q=' + openWeatherCreds.city + '&units=imperial&appid=' + openWeatherCreds.apiKey;
+      zipcode: req.query.zip
+      }
+    var queryURLweather = 'https://api.openweathermap.org/data/2.5/weather?zip=' + openWeatherCreds.zipcode + '&units=imperial&appid=' + openWeatherCreds.apiKey;
 
     axios.get(queryURLweather)
       .then(function (resp) {

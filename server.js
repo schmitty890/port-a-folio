@@ -14,11 +14,14 @@ const dotenv = require('dotenv').config();
  */
 const app = express();
 
+
 /**
  * Express configuration.
  */
 // set port to 8888
 app.set('port', process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 // set the path read the views folder that holds the handlebar html templates
 app.set('views', path.join(__dirname, 'views'));
 // set the teplating engine to render handlebars with default layout and any custom handlebar helper functions
@@ -35,8 +38,7 @@ app.engine('handlebars', exphbs({
 }));
 // set the view engine to handlebars
 app.set('view engine', 'handlebars');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
 // read the build folder when server is running
 app.use('/build', express.static(__dirname + '/build'));
 app.use('/public', express.static(__dirname + '/public'));
