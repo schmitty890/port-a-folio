@@ -7,6 +7,8 @@ const chalk = require('chalk');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const fs = require('fs');
+const dotenv = require('dotenv').config();
+
 /**
  * Create Express server.
  */

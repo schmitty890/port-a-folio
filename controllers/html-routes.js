@@ -1,4 +1,5 @@
 var jobs = require('../data/jobs.json');
+var axios = require('axios');
 
 module.exports = function (app) {
   // Home Page
@@ -28,6 +29,26 @@ module.exports = function (app) {
     res.render('weather', {
       hbsObject: hbsObject
     });
+  });
+
+
+  app.get('/api/weather', function(req, res) {
+    console.log('we here');
+    var openWeatherCreds = {
+      apiKey: process.env.openWeatherMap,
+      zipcode: 08619,
+      city: 'Trenton'
+    }
+    var queryURLweather = 'https://api.openweathermap.org/data/2.5/weather?zip=' + openWeatherCreds.zipcode + '&q=' + openWeatherCreds.city + '&units=imperial&appid=' + openWeatherCreds.apiKey;
+
+    axios.get(queryURLweather)
+      .then(function (resp) {
+        res.send(resp.data);
+      })
+      .catch(function (error) {
+        // console.log(error);
+      });
+
   });
 
 };
