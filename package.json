@@ -10,7 +10,8 @@
   "author": "Jason Schmitt",
   "license": "ISC",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "test": "mocha || exit 0"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -26,6 +27,7 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.6",
+    "chai": "^4.2.0",
     "eslint": "^4.19.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^7.0.1",
@@ -38,6 +40,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
+    "mocha": "^6.0.1",
     "run-sequence": "^2.2.1",
     "stylelint": "^9.9.0"
   }

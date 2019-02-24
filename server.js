@@ -55,6 +55,15 @@ app.get('*', function(req, res) {
   res.render('404');
 });
 
+module.exports = {
+  sayHello: function() {
+    return 'hello';
+  },
+  addNumbers: function(x, y) {
+    return x + y;
+  }
+}
+
 /**
  * Start Express server.
  */
