@@ -21,21 +21,21 @@ var Weather = function(){
     });
   };
 
-  // function getWeather(value) {
-  //   console.log(value);
-  //   var data = {
-  //     zip: value
-  //   }
-  //   console.log(data);
-  //   $.ajax({
-  //     type: 'GET',
-  //     data: data,
-  //     url: '/api/weather'
-  //   }).then(function(resp) {
-  //     console.log(resp);
-  //     // createIcon(resp);
-  //   });
-  // };
+  function getWeather(value) {
+    console.log(value);
+    var data = {
+      zip: value
+    }
+    console.log(data);
+    $.ajax({
+      type: 'GET',
+      data: data,
+      url: '/api/weather'
+    }).then(function(resp) {
+      console.log(resp);
+      // createIcon(resp);
+    });
+  };
 
   // function createIcon(data) {
   //   var icon = data.weather[0].icon;
