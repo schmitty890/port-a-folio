@@ -57,7 +57,7 @@ app.get('*', function(req, res) {
 
 module.exports = {
   sayHello: function() {
-    return 'hello';
+    return 'hello1';
   },
   addNumbers: function(x, y) {
     return x + y;
