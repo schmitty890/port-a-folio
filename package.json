@@ -11,7 +11,8 @@
   "license": "ISC",
   "scripts": {
     "start": "gulp",
-    "test": "mocha || exit 0"
+    "testz": "mocha || exit 0",
+    "test": "nyc --reporter=text mocha"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -41,6 +42,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "mocha": "^6.0.1",
+    "nyc": "^13.3.0",
     "run-sequence": "^2.2.1",
     "stylelint": "^9.9.0"
   }
