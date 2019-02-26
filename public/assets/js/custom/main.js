@@ -32,6 +32,7 @@ var Weather = function(){
       data: data,
       url: '/api/weather'
     }).then(function(resp) {
+      console.log('ayo we got a response!');
       console.log(resp);
       // createIcon(resp);
     });

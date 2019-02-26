@@ -36,11 +36,13 @@ module.exports = function (app) {
     var openWeatherCreds = {
       apiKey: process.env.openWeatherMap,
       zipcode: req.query.zip
-      }
+    }
+    console.log(openWeatherCreds);
     var queryURLweather = 'https://api.openweathermap.org/data/2.5/weather?zip=' + openWeatherCreds.zipcode + '&units=imperial&appid=' + openWeatherCreds.apiKey;
 
     axios.get(queryURLweather)
       .then(function (resp) {
+        console.log(resp.data);
         res.send(resp.data);
       })
       .catch(function (error) {
