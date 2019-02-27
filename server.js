@@ -33,6 +33,9 @@ app.engine('handlebars', exphbs({
     },
     classcheck: function(str) {
       if(str) return str.replace(/ /g,"-");
+    },
+    momentFromNowTime: function (time) {
+      return moment(time).fromNow();
     }
   }
 }));
