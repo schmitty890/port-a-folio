@@ -212,14 +212,18 @@ var event = {
     'timeZone': 'America/New_York',
   },
   'attendees': [
-    {'email': 'schmitty890@gmail.com'},
+    {'email': 'schmitty890@gmail.com',
+      'additionalGuests': 1,
+      'comment': 'the guests personal comment',
+      'displayName': 'Jason'
+    },
     {'email': 'sbrin@example.com'},
   ],
   'reminders': {
     'useDefault': false,
     'overrides': [
-      {'method': 'email', 'minutes': 10},
-      {'method': 'popup', 'minutes': 24 * 60},
+      {'method': 'email', 'minutes': 24 * 60},
+      {'method': 'popup', 'minutes': 10},
     ],
   },
 };
