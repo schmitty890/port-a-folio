@@ -179,6 +179,20 @@ module.exports = function (app) {
         if (err) return console.log('The API returned an error: ' + err);
         const events = resp.data.items;
         var hbsObject = resp.data.items;
+
+        res.send(resp.data.items);
+        // res.render('googleapi', {
+        //   hbsObject: hbsObject
+        // });
+        if (events.length) {
+          console.log('Upcoming 10 events:');
+          events.map((event, i) => {
+            const start = event.start.dateTime || event.start.date;
+            console.log(`${start} - ${event.summary}`);
+          });
+        } else {
+          console.log('No upcoming events found.');
+        }
 //////////////////////////////////////
 // Refer to the Node.js quickstart on how to setup the environment:
 // https://developers.google.com/calendar/quickstart/node
@@ -190,25 +204,22 @@ var event = {
   'location': '800 Howard St., San Francisco, CA 94103',
   'description': 'A chance to hear more about Google\'s developer products.',
   'start': {
-    'dateTime': '2019-03-12T09:00:00-07:00',
-    'timeZone': 'America/Los_Angeles',
+    'dateTime': '2019-02-28T21:10:00',
+    'timeZone': 'America/New_York',
   },
   'end': {
-    'dateTime': '2019-03-15T17:00:00-07:00',
-    'timeZone': 'America/Los_Angeles',
+    'dateTime': '2019-03-01T21:00:00',
+    'timeZone': 'America/New_York',
   },
-  'recurrence': [
-    'RRULE:FREQ=DAILY;COUNT=2'
-  ],
   'attendees': [
-    {'email': 'lpage@example.com'},
+    {'email': 'schmitty890@gmail.com'},
     {'email': 'sbrin@example.com'},
   ],
   'reminders': {
     'useDefault': false,
     'overrides': [
-      {'method': 'email', 'minutes': 24 * 60},
-      {'method': 'popup', 'minutes': 10},
+      {'method': 'email', 'minutes': 10},
+      {'method': 'popup', 'minutes': 24 * 60},
     ],
   },
 };
@@ -225,21 +236,9 @@ calendar.events.insert({
   console.log('Event created: %s', event.htmlLink);
 });
 //////////////////////////////////////
-        res.send(resp.data.items);
-        // res.render('googleapi', {
-        //   hbsObject: hbsObject
-        // });
-        if (events.length) {
-          console.log('Upcoming 10 events:');
-          events.map((event, i) => {
-            const start = event.start.dateTime || event.start.date;
-            console.log(`${start} - ${event.summary}`);
-          });
-        } else {
-          console.log('No upcoming events found.');
-        }
       });
     }
+
     //////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////
     //////////////////////////////GOOGLE API//////////////////////////////
