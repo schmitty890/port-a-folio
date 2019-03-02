@@ -100,7 +100,7 @@ module.exports = function (app) {
     const fs = require('fs');
 
     // If modifying these scopes, delete token.json.
-    const SCOPES = ['https://www.googleapis.com/auth/calendar'];
+    const SCOPES = ['https://www.googleapis.com/auth/calendar', 'https://www.googleapis.com/auth/calendar.events'];
     // The file token.json stores the user's access and refresh tokens, and is
     // created automatically when the authorization flow completes for the first
     // time.
@@ -188,59 +188,110 @@ module.exports = function (app) {
           console.log('Upcoming 10 events:');
           events.map((event, i) => {
             const start = event.start.dateTime || event.start.date;
-            console.log(`${start} - ${event.summary}`);
+            console.log(`${start} - ${event.summary} - ${event.id}`);
           });
         } else {
           console.log('No upcoming events found.');
         }
-//////////////////////////////////////
-// Refer to the Node.js quickstart on how to setup the environment:
-// https://developers.google.com/calendar/quickstart/node
-// Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
-// stored credentials.
-
-var event = {
-  'summary': 'Google I/O 2015',
-  'location': '800 Howard St., San Francisco, CA 94103',
-  'description': 'A chance to hear more about Google\'s developer products.',
-  'start': {
-    'dateTime': '2019-02-28T21:10:00',
-    'timeZone': 'America/New_York',
-  },
-  'end': {
-    'dateTime': '2019-03-01T21:00:00',
-    'timeZone': 'America/New_York',
-  },
-  'attendees': [
-    {'email': 'schmitty890@gmail.com',
-      'additionalGuests': 1,
-      'comment': 'the guests personal comment',
-      'displayName': 'Jason'
-    },
-    {'email': 'sbrin@example.com'},
-  ],
-  'reminders': {
-    'useDefault': false,
-    'overrides': [
-      {'method': 'email', 'minutes': 24 * 60},
-      {'method': 'popup', 'minutes': 10},
-    ],
-  },
-};
-
-calendar.events.insert({
-  auth: auth,
-  calendarId: 'primary',
-  resource: event,
-}, function(err, event) {
-  if (err) {
-    console.log('There was an error contacting the Calendar service: ' + err);
-    return;
-  }
-  console.log('Event created: %s', event.htmlLink);
-});
-//////////////////////////////////////
       });
+
+
+      // POST event
+      // function postEvent(auth, calendar){
+        //////////////////////////////////////
+        // Refer to the Node.js quickstart on how to setup the environment:
+        // https://developers.google.com/calendar/quickstart/node
+        // Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
+        // stored credentials.
+
+        var event = {
+          'summary': 'The main title',
+          'location': '1416 enchanted oaks dr',
+          'description': 'a lovely description',
+          'start': {
+            'dateTime': '2019-03-13T21:10:00',
+            'timeZone': 'America/New_York',
+          },
+          'end': {
+            'dateTime': '2019-03-15T21:00:00',
+            'timeZone': 'America/New_York',
+          },
+          'attendees': [
+            {'email': 'schmitty890@gmail.com',
+              'additionalGuests': 1,
+              'comment': 'the guests personal comment',
+              'displayName': 'Jason'
+            },
+            {'email': 'anotherperson@example.com'},
+          ],
+          'reminders': {
+            'useDefault': false,
+            'overrides': [
+              {'method': 'email', 'minutes': 24 * 60},
+              {'method': 'popup', 'minutes': 10},
+            ],
+          }
+        };
+        var calendarObject =
+        {
+          'calendarId': 'primary',
+          'resource': event
+        };
+        var request = calendar.events.insert(calendarObject, (err, event) => {
+          console.log('complete');
+          if (err) {
+            console.log('There was an error contacting the Calendar service: ' + err);
+            return;
+          }
+          console.log('Event created: %s', event.htmlLink);
+        });
+      // }
+
+      // GET event
+      // function getEvent(auth, calendar){
+        // calendar.events.get({
+        //   auth: auth,
+        //   calendarId: 'primary',
+        //   eventId: 'nnfind1odk12r259p6veelsi3s'
+        // }, function(err, resp) {
+        //   if (err) {
+        //     console.log('Error: ' + err);
+        //     return;
+        //   }
+        //   console.log(resp.data);
+        // });
+      // }
+
+      // UPDATE event
+      // function updateEvent(auth, calendar){
+        // calendar.events.update({
+        //   auth: auth,
+        //   calendarId: 'primary',
+        //   eventId: 'nnfind1odk12r259p6veelsi3s',
+        //   attendees: ['blah@testttt.com']
+        // }, function(err, resp) {
+        //   if (err) {
+        //     console.log('Error: ' + err);
+        //     return;
+        //   }
+        //   console.log('updated :' + resp.data);
+        // });
+      // }
+
+      // DELETE event
+      // function removeEvents(auth, calendar){
+      //   calendar.events.delete({
+      //     auth: auth,
+      //     calendarId: 'primary',
+      //     eventId: 'ch7ee3a8ivdsmql8a52pgakfdo'
+      //   }, function(err) {
+      //     if (err) {
+      //       console.log('Error: ' + err);
+      //       return;
+      //     }
+      //     console.log("Removed");
+      //   });
+      // }
     }
 
     //////////////////////////////////////////////////////////////////////
