@@ -76,24 +76,44 @@ var postEvent = function(req, res) {
    * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
    */
   function listEvents(auth) {
-    const calendar = google.calendar({version: 'v3', auth});
-    var event = req.body;
-    var calendarObject =
-    {
-      'calendarId': 'primary',
-      'resource': event
-    };
+      const calendar = google.calendar({version: 'v3', auth});
+      var event = req.body;
+      var calendarObject =
+      {
+        'calendarId': 'primary',
+        'resource': event
+      };
+      calendar.events.insert(calendarObject, (err, resp) => {
+        if(err) {
+          res.send(err);
+        } else {
+          res.send(resp.data);  
+        }
+      });
 
-    console.log(calendarObject);
 
-    var request = calendar.events.insert(calendarObject, (err, event) => {
-      console.log('complete');
-      if (err) {
-        console.log('There was an error contacting the Calendar service: ' + err);
-        return;
-      }
-      console.log('Event created: %s', event.htmlLink);
-    });
+    // const calendar = google.calendar({version: 'v3', auth});
+    // var event = req.body;
+    // var calendarObject =
+    // {
+    //   'calendarId': 'primary',
+    //   'resource': event
+    // };
+
+    // // console.log(calendarObject);
+
+    // var request = calendar.events.insert(calendarObject, (err, event) => {
+
+    //   if (err) {
+    //     console.log('There was an error contacting the Calendar service: ' + err);
+    //     res.send(err);
+    //     // return;
+    //   } else {
+    //     res.send(resp.data.items);
+    //     res.send(event);
+    //   }
+    //   // console.log('Event created: %s', event.htmlLink);
+    // });
   };
 };
 

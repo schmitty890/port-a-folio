@@ -12,66 +12,233 @@ var GoogleAPI = function(){
   };
 
   function postEvent(event) {
-    $.ajax("/api/google-api", {
-      type: "POST",
-      data: event
-    }).then(function(resp) {
-      console.log('post: google-api response');
-      console.log(resp);
-    });
+    console.log('sending event');
+    // event.forEach(function(index) {
+      console.log('send to ajax function');
+      $.ajax("/api/google-api", {
+        type: "POST",
+        async: true,
+        data: event[0]
+      }).then(function(resp) {
+        
+        console.log('post: google-api response');
+        console.log(resp);
+
+        $('#google-api-msg').prepend(`
+          <div class="notification is-success">
+            <button class="delete"></button>
+            <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
+          </div>
+          `);
+        console.log('send to ajax function');
+        $.ajax("/api/google-api", {
+          type: "POST",
+          async: true,
+          data: event[1]
+        }).then(function(resp) {
+          
+          console.log('post: google-api response');
+          console.log(resp);
+
+          $('#google-api-msg').prepend(`
+            <div class="notification is-success">
+              <button class="delete"></button>
+              <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
+            </div>
+            `);
+          console.log('send to ajax function');
+          $.ajax("/api/google-api", {
+            type: "POST",
+            async: true,
+            data: event[2]
+          }).then(function(resp) {
+            
+            console.log('post: google-api response');
+            console.log(resp);
+
+            $('#google-api-msg').prepend(`
+              <div class="notification is-success">
+                <button class="delete"></button>
+                <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
+              </div>
+              `);
+              console.log('send to ajax function');
+              $.ajax("/api/google-api", {
+                type: "POST",
+                async: true,
+                data: event[3]
+              }).then(function(resp) {
+                
+                console.log('post: google-api response');
+                console.log(resp);
+
+                $('#google-api-msg').prepend(`
+                  <div class="notification is-success">
+                    <button class="delete"></button>
+                    <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
+                  </div>
+                  `);
+                  console.log('send to ajax function');
+                  $.ajax("/api/google-api", {
+                    type: "POST",
+                    async: true,
+                    data: event[4]
+                  }).then(function(resp) {
+                    
+                    console.log('post: google-api response');
+                    console.log(resp);
+
+                    $('#google-api-msg').prepend(`
+                      <div class="notification is-success">
+                        <button class="delete"></button>
+                        <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
+                      </div>
+                      `);
+                    $('.google-api-progress').addClass('hide');
+                  });
+              });
+          });
+        });
+      });
+    // });
   }
 
+
+
   function bindEvents() {
+
+    // when detete notification is clicked
+    $(document).on('click', '.delete', function() {
+      $(this).parent('.notification').remove();
+    });
+    // clear the form values
+    $(document).on('click', '.clear-google-form', function() {
+      $('#google-calendar input').val('');
+    });
+    // get the events from our calendar
     $(document).on('click', '#get-events', function() {
       console.log('get-events clicked!');
       getCalendar();
     });
+    // gather input form values and send object to ajax post method
     $(document).on('click', '#post-event', function() {
+      console.log('remove progress hide class');
+      $('.google-api-progress').removeClass('hide');
       var summary = $('.summary').val();
-      var startTime = $('.start-date').val();
-      var endTime = $('.end-date').val();
+      var startDate = $('.date').val();
+      var twoWeeksOut = moment(startDate).subtract(14,'d').format('YYYY-MM-DD');
+      var fourWeeksOut = moment(startDate).subtract(28,'d').format('YYYY-MM-DD');
+      var sixWeeksOut = moment(startDate).subtract(42,'d').format('YYYY-MM-DD');
+      var eightWeeksOut = moment(startDate).subtract(56,'d').format('YYYY-MM-DD');
 
+      // // we need a start date for the google api
+      if(startDate !== '') {
 
-      startTime = convertTimeRealQuick(startTime);
-      endTime = convertTimeRealQuick(endTime);
-
-      // regex add a T at space, add :00 at end
-      function convertTimeRealQuick(time) {
-        time = time.replace(/ /g,"T");
-        time += ':00';
-        return time;
+        // create payload to send to server
+        var event = [{
+                'summary': summary,
+                'location': $('.location').val(),
+                'description': $('.description').val(),
+                'start': {
+                  'date': startDate,
+                  'timeZone': 'America/New_York',
+                },
+                'end': {
+                  'date': startDate,
+                  'timeZone': 'America/New_York',
+                },
+                'reminders': {
+                  'useDefault': false,
+                  'overrides': [
+                    {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
+                  ],
+                }
+              }, {
+                'summary': summary + ' - two weeks out',
+                'location': $('.location').val(),
+                'description': 'final checklist',
+                'start': {
+                  'date': twoWeeksOut,
+                  'timeZone': 'America/New_York',
+                },
+                'end': {
+                  'date': twoWeeksOut,
+                  'timeZone': 'America/New_York',
+                },
+                'reminders': {
+                  'useDefault': false,
+                  'overrides': [
+                    {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
+                  ],
+                }
+              }, {
+                'summary': summary + ' - four weeks out',
+                'location': $('.location').val(),
+                'description': 'gather permissions',
+                'start': {
+                  'date': fourWeeksOut,
+                  'timeZone': 'America/New_York',
+                },
+                'end': {
+                  'date': fourWeeksOut,
+                  'timeZone': 'America/New_York',
+                },
+                'reminders': {
+                  'useDefault': false,
+                  'overrides': [
+                    {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
+                  ],
+                }
+              }, {
+                'summary': summary + ' - six weeks out',
+                'location': $('.location').val(),
+                'description': 'submit paper 2',
+                'start': {
+                  'date': sixWeeksOut,
+                  'timeZone': 'America/New_York',
+                },
+                'end': {
+                  'date': sixWeeksOut,
+                  'timeZone': 'America/New_York',
+                },
+                'reminders': {
+                  'useDefault': false,
+                  'overrides': [
+                    {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
+                  ],
+                }
+              }, {
+                'summary': summary + ' - eight weeks out',
+                'location': $('.location').val(),
+                'description': 'submit paper 1',
+                'start': {
+                  'date': eightWeeksOut,
+                  'timeZone': 'America/New_York',
+                },
+                'end': {
+                  'date': eightWeeksOut,
+                  'timeZone': 'America/New_York',
+                },
+                'reminders': {
+                  'useDefault': false,
+                  'overrides': [
+                    {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
+                  ],
+                }
+              }];
+        //   // send event to server
+        postEvent(event);
+      } else {
+        // let user know they need to enter a start date
+        $('#google-api-msg').append(`
+          <div class="notification is-danger">
+            <button class="delete"></button>
+            Enter a date!
+          </div>`);
+        $('.google-api-progress').addClass('hide');
       }
 
-      // create payload to send to server
-      var event = {
-        'summary': summary,
-        'location': $('.location').val(),
-        'description': $('.description').val(),
-        'start': {
-          'dateTime': startTime,
-          'timeZone': 'America/New_York',
-        },
-        'end': {
-          'dateTime': endTime,
-          'timeZone': 'America/New_York',
-        },
-        'attendees': [
-          {'email': $('.attendee-email').val(),
-            'additionalGuests': $('.attendee-guests').val(),
-            'comment': $('.attendee-comment').val()
-          },
-          {'email': 'anotherperson@example.com'},
-        ],
-        'reminders': {
-          'useDefault': false,
-          'overrides': [
-            {'method': 'email', 'minutes': 24 * 60},
-            {'method': 'popup', 'minutes': 10},
-          ],
-        }
-      };
-      // send event to server
-      postEvent(event);
+      
     });
   }
 
@@ -102,11 +269,12 @@ var Form = function(){
    * NOTE: There should not be more than one of the same ID on a form. if we need mulitple dates, create another id and add that handler here]
    */
   function initDate() {
-    $(".start-date, .end-date").flatpickr({
-      enableTime: true,
-      dateFormat: "Y-m-d H:i"
+    $(".date").flatpickr({
+      // enableTime: true,
+      // dateFormat: "Y-m-d H:i"
     });
   }
+
 
   /**
    * [init. list of all the functions we run when we initalize the module.]
