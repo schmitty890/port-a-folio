@@ -13,94 +13,101 @@ var GoogleAPI = function(){
 
   function postEvent(event) {
     console.log('sending event');
-    // event.forEach(function(index) {
-      console.log('send to ajax function');
+    // console.log('send to ajax function');
+    // $.each( event, function( key, value ) {
+    //   $.ajax("/api/google-api", {
+    //     type: "POST",
+    //     async: true,
+    //     data: value
+    //   }).then(function(resp) {
+    //     $('#google-api-msg').prepend(`
+    //       <div class="notification is-success">
+    //         <button class="delete"></button>
+    //         <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
+    //       </div>
+    //       `);
+    //     });
+    // });
+    // for(var i = 0; i < event.length; i++) {
+    //     $.ajax("/api/google-api", {
+    //       type: "POST",
+    //       async: true,
+    //       data: event[i]
+    //     }).done(function(resp) {
+    //       $('#google-api-msg').prepend(`
+    //         <div class="notification is-success">
+    //           <button class="delete"></button>
+    //           <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
+    //         </div>
+    //         `);
+    //       });
+    // }
+
+    $.ajax("/api/google-api", {
+      type: "POST",
+      async: true,
+      data: event[0]
+    }).then(function(resp) {
+      $('#google-api-msg').prepend(`
+        <div class="notification is-success">
+          <button class="delete"></button>
+          <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
+        </div>
+        `);
+      // console.log('send to ajax function');
       $.ajax("/api/google-api", {
         type: "POST",
         async: true,
-        data: event[0]
+        data: event[1]
       }).then(function(resp) {
-        
-        console.log('post: google-api response');
-        console.log(resp);
-
         $('#google-api-msg').prepend(`
           <div class="notification is-success">
             <button class="delete"></button>
             <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
           </div>
           `);
-        console.log('send to ajax function');
+        // console.log('send to ajax function');
         $.ajax("/api/google-api", {
           type: "POST",
           async: true,
-          data: event[1]
+          data: event[2]
         }).then(function(resp) {
-          
-          console.log('post: google-api response');
-          console.log(resp);
-
           $('#google-api-msg').prepend(`
             <div class="notification is-success">
               <button class="delete"></button>
               <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
             </div>
             `);
-          console.log('send to ajax function');
-          $.ajax("/api/google-api", {
-            type: "POST",
-            async: true,
-            data: event[2]
-          }).then(function(resp) {
-            
-            console.log('post: google-api response');
-            console.log(resp);
-
-            $('#google-api-msg').prepend(`
-              <div class="notification is-success">
-                <button class="delete"></button>
-                <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
-              </div>
-              `);
-              console.log('send to ajax function');
-              $.ajax("/api/google-api", {
-                type: "POST",
-                async: true,
-                data: event[3]
-              }).then(function(resp) {
-                
-                console.log('post: google-api response');
-                console.log(resp);
-
-                $('#google-api-msg').prepend(`
-                  <div class="notification is-success">
-                    <button class="delete"></button>
-                    <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
-                  </div>
-                  `);
-                  console.log('send to ajax function');
-                  $.ajax("/api/google-api", {
-                    type: "POST",
-                    async: true,
-                    data: event[4]
-                  }).then(function(resp) {
-                    
-                    console.log('post: google-api response');
-                    console.log(resp);
-
-                    $('#google-api-msg').prepend(`
-                      <div class="notification is-success">
-                        <button class="delete"></button>
-                        <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
-                      </div>
-                      `);
-                    $('.google-api-progress').addClass('hide');
-                  });
-              });
-          });
+            // console.log('send to ajax function');
+            $.ajax("/api/google-api", {
+              type: "POST",
+              async: true,
+              data: event[3]
+            }).then(function(resp) {
+              $('#google-api-msg').prepend(`
+                <div class="notification is-success">
+                  <button class="delete"></button>
+                  <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
+                </div>
+                `);
+                // console.log('send to ajax function');
+                $.ajax("/api/google-api", {
+                  type: "POST",
+                  async: true,
+                  data: event[4]
+                }).then(function(resp) {
+                  $('#google-api-msg').prepend(`
+                    <div class="notification is-success">
+                      <button class="delete"></button>
+                      <strong>Success! </strong>${resp.summary} has been created on ${resp.end.date}.
+                    </div>
+                    `);
+                  $('.google-api-progress').addClass('hide');
+                });
+            });
         });
       });
-    // });
+    });
   }
 
 
@@ -114,6 +121,7 @@ var GoogleAPI = function(){
     // clear the form values
     $(document).on('click', '.clear-google-form', function() {
       $('#google-calendar input').val('');
+      $('#google-api-msg').empty();
     });
     // get the events from our calendar
     $(document).on('click', '#get-events', function() {
@@ -136,98 +144,101 @@ var GoogleAPI = function(){
 
         // create payload to send to server
         var event = [{
-                'summary': summary,
-                'location': $('.location').val(),
-                'description': $('.description').val(),
-                'start': {
-                  'date': startDate,
-                  'timeZone': 'America/New_York',
-                },
-                'end': {
-                  'date': startDate,
-                  'timeZone': 'America/New_York',
-                },
-                'reminders': {
-                  'useDefault': false,
-                  'overrides': [
-                    {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
-                  ],
-                }
-              }, {
-                'summary': summary + ' - two weeks out',
-                'location': $('.location').val(),
-                'description': 'final checklist',
-                'start': {
-                  'date': twoWeeksOut,
-                  'timeZone': 'America/New_York',
-                },
-                'end': {
-                  'date': twoWeeksOut,
-                  'timeZone': 'America/New_York',
-                },
-                'reminders': {
-                  'useDefault': false,
-                  'overrides': [
-                    {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
-                  ],
-                }
-              }, {
-                'summary': summary + ' - four weeks out',
-                'location': $('.location').val(),
-                'description': 'gather permissions',
-                'start': {
-                  'date': fourWeeksOut,
-                  'timeZone': 'America/New_York',
-                },
-                'end': {
-                  'date': fourWeeksOut,
-                  'timeZone': 'America/New_York',
-                },
-                'reminders': {
-                  'useDefault': false,
-                  'overrides': [
-                    {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
-                  ],
-                }
-              }, {
-                'summary': summary + ' - six weeks out',
-                'location': $('.location').val(),
-                'description': 'submit paper 2',
-                'start': {
-                  'date': sixWeeksOut,
-                  'timeZone': 'America/New_York',
-                },
-                'end': {
-                  'date': sixWeeksOut,
-                  'timeZone': 'America/New_York',
-                },
-                'reminders': {
-                  'useDefault': false,
-                  'overrides': [
-                    {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
-                  ],
-                }
-              }, {
-                'summary': summary + ' - eight weeks out',
-                'location': $('.location').val(),
-                'description': 'submit paper 1',
-                'start': {
-                  'date': eightWeeksOut,
-                  'timeZone': 'America/New_York',
-                },
-                'end': {
-                  'date': eightWeeksOut,
-                  'timeZone': 'America/New_York',
-                },
-                'reminders': {
-                  'useDefault': false,
-                  'overrides': [
-                    {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
-                  ],
-                }
-              }];
-        //   // send event to server
+          'summary': summary,
+          'location': $('.location').val(),
+          'description': $('.description').val(),
+          'start': {
+            'date': startDate,
+            'timeZone': 'America/New_York',
+          },
+          'end': {
+            'date': startDate,
+            'timeZone': 'America/New_York',
+          },
+          'reminders': {
+            'useDefault': false,
+            'overrides': [
+              {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
+            ],
+          }
+        }, {
+          'summary': summary + ' - two weeks out',
+          'location': $('.location').val(),
+          'description': 'final checklist',
+          'start': {
+            'date': twoWeeksOut,
+            'timeZone': 'America/New_York',
+          },
+          'end': {
+            'date': twoWeeksOut,
+            'timeZone': 'America/New_York',
+          },
+          'reminders': {
+            'useDefault': false,
+            'overrides': [
+              {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
+            ],
+          }
+        }, {
+          'summary': summary + ' - four weeks out',
+          'location': $('.location').val(),
+          'description': 'gather permissions',
+          'start': {
+            'date': fourWeeksOut,
+            'timeZone': 'America/New_York',
+          },
+          'end': {
+            'date': fourWeeksOut,
+            'timeZone': 'America/New_York',
+          },
+          'reminders': {
+            'useDefault': false,
+            'overrides': [
+              {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
+            ],
+          }
+        }, {
+          'summary': summary + ' - six weeks out',
+          'location': $('.location').val(),
+          'description': 'submit paper 2',
+          'start': {
+            'date': sixWeeksOut,
+            'timeZone': 'America/New_York',
+          },
+          'end': {
+            'date': sixWeeksOut,
+            'timeZone': 'America/New_York',
+          },
+          'reminders': {
+            'useDefault': false,
+            'overrides': [
+              {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
+            ],
+          }
+        }, {
+          'summary': summary + ' - eight weeks out',
+          'location': $('.location').val(),
+          'description': 'submit paper 1',
+          'start': {
+            'date': eightWeeksOut,
+            'timeZone': 'America/New_York',
+          },
+          'end': {
+            'date': eightWeeksOut,
+            'timeZone': 'America/New_York',
+          },
+          'reminders': {
+            'useDefault': false,
+            'overrides': [
+              {'method': 'email', 'minutes': (1 * 24 * 60) - (60 * 7)}
+            ],
+          }
+        }];
+        // send event to server
+        
         postEvent(event);
+        
+        
       } else {
         // let user know they need to enter a start date
         $('#google-api-msg').append(`
