@@ -7,49 +7,29 @@
     <div class="row mt40">
         <!-- Resume Item -->
         <div class="resume-js col-md-offset-2 col-md-9">
+        {{#each hbsObject.pageData.jobs}}
           <div class="resume-item row">
             <div class="col-md-6 col-sm-6 resume-left wow fadeInUp" data-wow-delay="0.15s" style="visibility: hidden; animation-delay: 0.15s; animation-name: none;">
               <div>
-              <a href="#"><img style="height: 50px; width: 50px" src="https://media.glassdoor.com/sqll/247760/brooks-bell-squarelogo-1464986694299.png"></a>
-                <h2 class="capitalize">brooks bell</h2>
-                <p>July 2017-February 2018</p>
-                <p class="capitalize">raleigh, north carolina</p>
+              <a href="#"><img style="height: 50px; width: 50px" src="{{this.logo}}"></a>
+                <h2 class="capitalize">{{this.company}}</h2>
+                <p>{{momentFromNowTime this.startDate}} - {{momentFromNowTime this.endDate}}</p>
+                <p>months spent: {{monthsBetweenDates this.startDate this.endDate}} </p>
+                <p>days spent: {{daysBetweenDates this.startDate this.endDate}} </p>
+                <p class="capitalize">{{this.city}}, {{this.state}}</p>
               </div>
             </div>
             <div class="col-md-6 col-sm-6 resume-right">
-              <h2 class="capitalize">javascript developer</h2>
-              <p>Employed as a JavaScript Developer, I am responsible for delivering front end web solutions for clients of Brooks Bell using primarily Adobe Target, as well as Optimizely and Monetate. Serving as the tech lead of Adobe Target mentoring a team of junior developers.<br><br></p>
-              <ul><li class="list-unstyled margin-bottom-10">Facilitated Adobe Target campaign launches.</li><li class="list-unstyled margin-bottom-10">Implemented A/B Testing strategy for high volume Adobe Target campaign pushes.</li><li class="list-unstyled margin-bottom-10">Wrote a/b tests for SunTrust, Barnes &amp; Noble, Toys R Us, Uber, American Express, Clinique, Nickelodeon and Oppenheimer Funds.</li><li class="list-unstyled margin-bottom-10">Train and mentor Junior/Intermediate level developers dom manipulation, modular javascript, css, a/b testing process, Adobe Target.</li><li class="list-unstyled margin-bottom-10">Adobe Target SME. Train developers and project managers on how to use Adobe Target.</li><li class="list-unstyled margin-bottom-10">Utilized Optimizely and Monetate as content delivery networks for a/b test scripts.</li><li class="list-unstyled margin-bottom-10">Utilized git version control</li><li class="list-unstyled margin-bottom-10">Implemented code review process for Junior/Intermediate developers.</li><li class="list-unstyled margin-bottom-10">Preformed code reviews for Junior/Intermediate developers.</li><li class="list-unstyled margin-bottom-10">Interviewed candidates for full-time positions from a technical perspective.</li></ul>
-            </div>
-          </div><div class="resume-item row">
-            <div class="col-md-6 col-sm-6 resume-left wow fadeInUp" data-wow-delay="0.15s" style="visibility: hidden; animation-delay: 0.15s; animation-name: none;">
-              <div>
-              <a href="#"><img style="height: 50px; width: 50px" src="https://img.grouponcdn.com/coupons/cCQ8NrxHNJAVMT9b5mmHh3/lowes-highres-500x500"></a>
-                <h2 class="capitalize">lowe's home improvement</h2>
-                <p>January 2015-July 2017</p>
-                <p class="capitalize">mooresville, north carolina</p>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 resume-right">
-              <h2 class="capitalize">software developer</h2>
-              <p>Employed as a software developer, I was responsible for daily content updates, projects, a/b test development and analytics.<br><br></p>
-              <ul><li class="list-unstyled margin-bottom-10">Contributor to a team of developers and worked along side business partners to successfully implement an A/B testing process.</li><li class="list-unstyled margin-bottom-10">Research, analysis and development of front-end solutions and enhancements to lowes.com within a Kanban framework.</li><li class="list-unstyled margin-bottom-10">Develop solutions on top of Adobe Experience Manager (Adobe CQ, Adobe Test &amp; Target, Adobe Recommendations, Adobe Sitecatalyst, Adobe Dynamic Tag Manager) to support business needs.</li><li class="list-unstyled margin-bottom-10">Agile SCRUM Development environment.</li><li class="list-unstyled margin-bottom-10">Utilize Atlassian Jira for agile project tracking.</li><li class="list-unstyled margin-bottom-10">Utilize Atlassian Confluence for documentation.</li><li class="list-unstyled margin-bottom-10">Utilized git version control.</li><li class="list-unstyled margin-bottom-10">Lead developer of A/B Tests on www.lowes.com and m.lowes.com utilizing Adobe Test and Target.</li><li class="list-unstyled margin-bottom-10">Advanced Integration between Frontend and Backend services using JSON and XML.</li><li class="list-unstyled margin-bottom-10">Contributor of analytics tagging on www.lowes.com and m.lowes.com utilizing Adobe DTM.</li><li class="list-unstyled margin-bottom-10">Broke down code for non-technical clients, provide extensive Q/A knowledge and testing, and manage tasking for our team.</li><li class="list-unstyled margin-bottom-10">Contributed to Lowes.com redesign, released in 2016.</li><li class="list-unstyled margin-bottom-10">Lead developer for front-end implementation of promotions and static content updates, site wide, released on a daily cadence. </li><li class="list-unstyled margin-bottom-10">Debugged and provided solutions for impediments and small enhancements to lowes.com and m.lowes.com using Charles Proxy, HTML, CSS, JS, jQuery, handlebars and nodejs.</li><li class="list-unstyled margin-bottom-10">Participated in daily standup, quad sessions, story grooming sessions, sprint planning and sprint retrospectives.</li><li class="list-unstyled margin-bottom-10">Worked with others to develop and utilize user chat implementation for lowesforpros.com and lowes.com using Adobe DTM, live-person, javascript, html and css.</li><li class="list-unstyled margin-bottom-10">Mentor and Train Junior level developers.</li><li class="list-unstyled margin-bottom-10">Interviewed candidates for full-time positions from a technical perspective.</li></ul>
-            </div>
-          </div><div class="resume-item row">
-            <div class="col-md-6 col-sm-6 resume-left wow fadeInUp" data-wow-delay="0.15s" style="visibility: hidden; animation-delay: 0.15s; animation-name: none;">
-              <div>
-              <a href="#"><img style="height: 50px; width: 50px" src="http://www.charbase.com/images/glyph/9634"></a>
-                <h2 class="capitalize">freelance</h2>
-                <p>2011-2017</p>
-                <p class="capitalize">cary, north carolina</p>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 resume-right">
-              <h2 class="capitalize">freelance web developer</h2>
-              <p>During freelancing, I worked on a number of websites and side projects. These ranged from local pizzeria's to small weather app side projects.<br><br></p>
-              <ul><li class="list-unstyled margin-bottom-10">Design and develop, as well as provide creative copy for static websites.</li><li class="list-unstyled margin-bottom-10">Specializing in HTML / CSS / Adobe Photoshop/Illustrator</li><li class="list-unstyled margin-bottom-10">JavaScript (jQuery) / AJAX to build the front-end</li><li class="list-unstyled margin-bottom-10">Created email marketing campaigns</li><li class="list-unstyled margin-bottom-10">Created advertisements for both the web and print.</li></ul>
+              <h2 class="capitalize">{{this.title}}</h2>
+              <p>{{this.desc.copy}}<br><br></p>
+              <ul>
+                {{#each responsibilities.list}}
+                  <li class="list-unstyled margin-bottom-10">{{this}}</li>
+                {{/each}}
+              </ul>
             </div>
           </div>
+        {{/each}}
         </div>
     </div>
   </div>

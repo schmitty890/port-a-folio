@@ -7,7 +7,7 @@ module.exports = function (app) {
   app.get('/', function (req, res) {
     // assign the handlebar object any data to be read into the template. this separates the data from the markup.
     var hbsObject = {
-      jobs: jobs
+      pageData: jobs
     };
     console.log(hbsObject);
     // console.log(hbsObject);

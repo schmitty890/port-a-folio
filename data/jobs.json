@@ -1,15 +1,34 @@
 {
     "jobs": [{
+        "company": "bank of america",
+        "title" : "vp, cnslt apps prog - front end engineer",
+        "startDate" : "2018-10-24",
+        "endDate": "present",
+        "city": "pennington",
+        "state": "new jersey",
+        "logo": "https://yt3.ggpht.com/a-/AAuE7mDxHmqWBN1JUzVUXHKQRzKjYAhUO6u7R1oRBQ=s900-mo-c-c0xffffffff-rj-k-no",
+        "desc": {
+            "show": true,
+            "copy": "a front end dev."
+        },
+        "responsibilities": {
+            "show": true,
+            "copy": "front end engineer",
+            "list": [
+                ""
+            ]
+        }
+    },{
         "company": "brooks bell",
         "title" : "javascript developer",
-        "startDate" : "July 2017",
-        "endDate": "February 2018",
+        "startDate" : "2017-07-31",
+        "endDate": "2018-02-06",
         "city": "raleigh",
         "state": "north carolina",
         "logo": "https://media.glassdoor.com/sqll/247760/brooks-bell-squarelogo-1464986694299.png",
         "desc": {
             "show": true,
-            "copy": "Employed as a JavaScript Developer, I am responsible for delivering front end web solutions for clients of Brooks Bell using primarily Adobe Target, as well as Optimizely and Monetate. Serving as the tech lead of Adobe Target mentoring a team of junior developers.<br><br>"
+            "copy": "Employed as a JavaScript Developer, I am responsible for delivering front end web solutions for clients of Brooks Bell using primarily Adobe Target, as well as Optimizely and Monetate. Serving as the tech lead of Adobe Target mentoring a team of junior developers."
         },
         "responsibilities": {
             "show": true,
@@ -30,14 +49,14 @@
     },{
         "company": "lowe's home improvement",
         "title" : "software developer",
-        "startDate" : "January 2015",
-        "endDate": "July 2017",
+        "startDate" : "2015-01-12",
+        "endDate": "2017-07-14",
         "city": "mooresville",
         "state": "north carolina",
         "logo": "https://img.grouponcdn.com/coupons/cCQ8NrxHNJAVMT9b5mmHh3/lowes-highres-500x500",
         "desc": {
             "show": true,
-            "copy": "Employed as a software developer, I was responsible for daily content updates, projects, a/b test development and analytics.<br><br>"
+            "copy": "Employed as a software developer, I was responsible for daily content updates, projects, a/b test development and analytics."
         },
         "responsibilities": {
             "show": true,
@@ -66,14 +85,14 @@
     },{
         "company": "freelance",
         "title" : "freelance web developer",
-        "startDate" : "2011",
-        "endDate": "2017",
+        "startDate" : "2011-01-01",
+        "endDate": "2017-01-01",
         "city": "cary",
         "state": "north carolina",
         "logo": "http://www.charbase.com/images/glyph/9634",
         "desc": {
             "show": true,
-            "copy": "During freelancing, I worked on a number of websites and side projects. These ranged from local pizzeria's to small weather app side projects.<br><br>"
+            "copy": "During freelancing, I worked on a number of websites and side projects. These ranged from local pizzeria's to small weather app side projects."
         },
         "responsibilities": {
             "show": true,

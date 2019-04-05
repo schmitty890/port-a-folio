@@ -25,19 +25,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // set the path read the views folder that holds the handlebar html templates
 app.set('views', path.join(__dirname, 'views'));
+
+const momentHbsHelpers = require('./views/helpers/moment');
+const regex = require('./views/helpers/regex');
 // set the teplating engine to render handlebars with default layout and any custom handlebar helper functions
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
   helpers: {
-    upperCase: function(str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    },
-    classcheck: function(str) {
-      if(str) return str.replace(/ /g,"-");
-    },
-    momentFromNowTime: function (time) {
-      return moment(time).fromNow();
-    }
+    momentFromNowTime: momentHbsHelpers.momentFromNowTime,
+    monthsBetweenDates: momentHbsHelpers.monthsBetweenDates,
+    weeksBetweenDates: momentHbsHelpers.weeksBetweenDates,
+    daysBetweenDates: momentHbsHelpers.daysBetweenDates,
+    replaceSpaceWithHyphen: regex.replaceSpaceWithHyphen
   }
 }));
 // set the view engine to handlebars
