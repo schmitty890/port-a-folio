@@ -1,4 +1,5 @@
 var jobs = require('../data/jobs.json');
+var sideprojects = require('../data/sideprojects.json');
 var axios = require('axios');
 var googleApiCrud = require("./google-api-crud.js");
 
@@ -7,7 +8,8 @@ module.exports = function (app) {
   app.get('/', function (req, res) {
     // assign the handlebar object any data to be read into the template. this separates the data from the markup.
     var hbsObject = {
-      pageData: jobs
+      pageData: jobs,
+      sideprojects: sideprojects
     };
     console.log(hbsObject);
     // console.log(hbsObject);

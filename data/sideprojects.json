@@ -1,0 +1,23 @@
+{
+    "projects": [{
+        "company": "first side proj",
+        "title" : "vp, cnslt apps prog - front end engineer",
+        "show": false,
+        "startDate" : "2018-10-24",
+        "endDate": "present",
+        "city": "pennington",
+        "state": "new jersey",
+        "logo": "https://yt3.ggpht.com/a-/AAuE7mDxHmqWBN1JUzVUXHKQRzKjYAhUO6u7R1oRBQ=s900-mo-c-c0xffffffff-rj-k-no",
+        "desc": {
+            "show": true,
+            "copy": "a front end dev."
+        },
+        "responsibilities": {
+            "show": true,
+            "copy": "front end engineer",
+            "list": [
+                ""
+            ]
+        }
+    }]
+}
