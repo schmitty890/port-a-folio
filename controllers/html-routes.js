@@ -294,6 +294,7 @@ module.exports = function (app) {
         });
 
     const sendResetPasswordEmail = (user) => {
+      console.log('sendResetPasswordEmail');
       if(!user) { return; }
       const transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -308,6 +309,8 @@ module.exports = function (app) {
         subject: 'Your La Liga password has been changed',
         text: `Hello,\n\nThis is a confirmation that the password for your account ${user.email} has just been changed.\n`
       };
+      console.log(mailOptions);
+      console.log('sending nodemailer email');
       return transporter.sendMail(mailOptions)
         .then(() => {
           req.flash('success', { msg: 'Success! Your password has been changed.' });
@@ -399,18 +402,6 @@ module.exports = function (app) {
   //GOOGLE API
   app.get('/api/google-api', function(req, res) {
     googleApiCrud.getEvent(req, res);
-  });
-
-
-  // Spotify Page
-  app.get('/spotify', function (req, res) {
-    var hbsObject = {
-    };
-    console.log(hbsObject);
-    // console.log(hbsObject);
-    res.render('spotify', {
-      hbsObject: hbsObject
-    });
   });
 
 };

@@ -123,4 +123,21 @@ module.exports = function (app) {
   });
 
 
+  /**
+   * GET /spotify
+   * Account page
+   * Ensure user is authenticated in passport first then render account page
+   */
+  app.get('/spotify', passportConfig.isAuthenticated, function(req, res) {
+    console.log('SUCCESS!!!!!!');
+    const hbsObject = {
+      user: req.user
+    }
+    res.render('spotify', {
+      title: 'Account Management',
+      hbsObject: hbsObject
+    });
+  });
+
+
 };
