@@ -22,11 +22,13 @@
             <div class="col-md-6 col-sm-6 resume-right">
               <h2 class="capitalize">{{this.title}}</h2>
               <p>{{this.desc.copy}}<br><br></p>
-              <ul>
-                {{#each responsibilities.list}}
-                  <li class="list-unstyled margin-bottom-10">{{this}}</li>
-                {{/each}}
-              </ul>
+              {{#if this.responsibilities.show}}
+                <ul>
+                  {{#each responsibilities.list}}
+                    <li class="list-unstyled margin-bottom-10">{{this}}</li>
+                  {{/each}}
+                </ul>
+              {{/if}}
             </div>
           </div>
         {{/each}}

@@ -9,13 +9,16 @@
         "logo": "https://yt3.ggpht.com/a-/AAuE7mDxHmqWBN1JUzVUXHKQRzKjYAhUO6u7R1oRBQ=s900-mo-c-c0xffffffff-rj-k-no",
         "desc": {
             "show": true,
-            "copy": "a front end dev."
+            "copy": "Employed as a VP, Cnslt Apps Prog, I am a front end engineer who primarily works within a client facing transfer of assets section of Merrill Lynch. Additionally, I collaborate in research and development efforts in a company style guide."
         },
         "responsibilities": {
-            "show": true,
+            "show": false,
             "copy": "front end engineer",
             "list": [
-                ""
+                "Wrote and refactored gulp tasks to optimize css file output during build task runner",
+                "Train junior level developers on techniques on how to render UI views",
+                "Collaborate on a company wide style guide to showcase UI assets across platforms",
+                "Participated in daily standup, quad sessions, story grooming sessions, sprint planning and sprint retrospectives"
             ]
         }
     },{
@@ -34,16 +37,16 @@
             "show": true,
             "copy": "a-b test developer",
             "list": [
-                "Facilitated Adobe Target campaign launches.",
-                "Implemented A/B Testing strategy for high volume Adobe Target campaign pushes.",
-                "Wrote a/b tests for SunTrust, Barnes & Noble, Toys R Us, Uber, American Express, Clinique, Nickelodeon and Oppenheimer Funds.",
-                "Train and mentor Junior/Intermediate level developers dom manipulation, modular javascript, css, a/b testing process, Adobe Target.",
-                "Adobe Target SME. Train developers and project managers on how to use Adobe Target.",
-                "Utilized Optimizely and Monetate as content delivery networks for a/b test scripts.",
+                "Facilitated Adobe Target campaign launches",
+                "Implemented A/B Testing strategy for high volume Adobe Target campaign pushes",
+                "Wrote a/b tests for SunTrust, Barnes & Noble, Toys R Us, Uber, American Express, Clinique, Nickelodeon and Oppenheimer Funds",
+                "Train and mentor Junior/Intermediate level developers dom manipulation, modular javascript, css, a/b testing process, Adobe Target",
+                "Adobe Target SME. Train developers and project managers on how to use Adobe Target",
+                "Utilized Optimizely and Monetate as content delivery networks for a/b test scripts",
                 "Utilized git version control",
-                "Implemented code review process for Junior/Intermediate developers.",
-                "Preformed code reviews for Junior/Intermediate developers.",
-                "Interviewed candidates for full-time positions from a technical perspective."
+                "Implemented code review process for Junior/Intermediate developers",
+                "Preformed code reviews for Junior/Intermediate developers",
+                "Interviewed candidates for full-time positions from a technical perspective"
             ]
         }
     },{
@@ -62,24 +65,24 @@
             "show": true,
             "copy": "front end developer on the fed team",
             "list": [
-                "Contributor to a team of developers and worked along side business partners to successfully implement an A/B testing process.",
-                "Research, analysis and development of front-end solutions and enhancements to lowes.com within a Kanban framework.",
-                "Develop solutions on top of Adobe Experience Manager (Adobe CQ, Adobe Test & Target, Adobe Recommendations, Adobe Sitecatalyst, Adobe Dynamic Tag Manager) to support business needs.",
-                "Agile SCRUM Development environment.",
-                "Utilize Atlassian Jira for agile project tracking.",
-                "Utilize Atlassian Confluence for documentation.",
-                "Utilized git version control.",
-                "Lead developer of A/B Tests on www.lowes.com and m.lowes.com utilizing Adobe Test and Target.",
-                "Advanced Integration between Frontend and Backend services using JSON and XML.",
-                "Contributor of analytics tagging on www.lowes.com and m.lowes.com utilizing Adobe DTM.",
-                "Broke down code for non-technical clients, provide extensive Q/A knowledge and testing, and manage tasking for our team.",
-                "Contributed to Lowes.com redesign, released in 2016.",
-                "Lead developer for front-end implementation of promotions and static content updates, site wide, released on a daily cadence. ",
-                "Debugged and provided solutions for impediments and small enhancements to lowes.com and m.lowes.com using Charles Proxy, HTML, CSS, JS, jQuery, handlebars and nodejs.",
-                "Participated in daily standup, quad sessions, story grooming sessions, sprint planning and sprint retrospectives.",
-                "Worked with others to develop and utilize user chat implementation for lowesforpros.com and lowes.com using Adobe DTM, live-person, javascript, html and css.",
-                "Mentor and Train Junior level developers.",
-                "Interviewed candidates for full-time positions from a technical perspective."
+                "Contributor to a team of developers and worked along side business partners to successfully implement an A/B testing process",
+                "Research, analysis and development of front-end solutions and enhancements to lowes.com within a Kanban framework",
+                "Develop solutions on top of Adobe Experience Manager (Adobe CQ, Adobe Test & Target, Adobe Recommendations, Adobe Sitecatalyst, Adobe Dynamic Tag Manager) to support business needs",
+                "Agile SCRUM Development environment",
+                "Utilize Atlassian Jira for agile project tracking",
+                "Utilize Atlassian Confluence for documentation",
+                "Utilized git version control",
+                "Lead developer of A/B Tests on www.lowes.com and m.lowes.com utilizing Adobe Test and Target",
+                "Advanced Integration between Frontend and Backend services using JSON and XML",
+                "Contributor of analytics tagging on www.lowes.com and m.lowes.com utilizing Adobe DTM",
+                "Broke down code for non-technical clients, provide extensive Q/A knowledge and testing, and manage tasking for our team",
+                "Contributed to Lowes.com redesign, released in 2016",
+                "Lead developer for front-end implementation of promotions and static content updates, site wide, released on a daily cadence ",
+                "Debugged and provided solutions for impediments and small enhancements to lowes.com and m.lowes.com using Charles Proxy, HTML, CSS, JS, jQuery, handlebars and nodejs",
+                "Participated in daily standup, quad sessions, story grooming sessions, sprint planning and sprint retrospectives",
+                "Worked with others to develop and utilize user chat implementation for lowesforpros.com and lowes.com using Adobe DTM, live-person, javascript, html and css",
+                "Mentor and Train Junior level developers",
+                "Interviewed candidates for full-time positions from a technical perspective"
             ]
         }
     },{
@@ -98,11 +101,11 @@
             "show": true,
             "copy": "web dev for cozzolinos",
             "list": [
-                "Design and develop, as well as provide creative copy for static websites.",
+                "Design and develop, as well as provide creative copy for static websites",
                 "Specializing in HTML / CSS / Adobe Photoshop/Illustrator",
                 "JavaScript (jQuery) / AJAX to build the front-end",
                 "Created email marketing campaigns",
-                "Created advertisements for both the web and print."
+                "Created advertisements for both the web and print"
             ]
         }
     }]
