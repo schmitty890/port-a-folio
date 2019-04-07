@@ -212,8 +212,7 @@ module.exports = function (app) {
       email: req.body.email,
       password: req.body.password,
       firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      teamName: req.body.teamName
+      lastName: req.body.lastName
     });
 
     User.findOne({ email: req.body.email }, (err, existingUser) => {
