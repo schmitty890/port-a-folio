@@ -57,6 +57,9 @@
                 <div class="column is-4 is-offset-4">
                     <h3 class="title has-text-grey">Sign Up</h3>
                     <p class="subtitle has-text-grey">Please sign up to interact with Jason's web apps!</p>
+                    {{#if error}}
+                      <p style="color: red;">{{this.error}}</p>
+                    {{/if}}
                     <div class="box">
                         <figure class="avatar">
                             <img src="https://placehold.it/128x128">

@@ -219,8 +219,11 @@ module.exports = function (app) {
       if(err) { return next(err); }
       if(existingUser) {
         console.log('Account with that email address already exists!')
-        req.flash('errors', { msg: 'Account with that email address already exists.' });
-        return res.redirect('/signup');
+        // req.flash('errors', { msg: 'Account with that email address already exists.' });
+        return res.render('account/signup', {
+          error: 'Account with that email address already exists.'
+        });
+        // return res.redirect('/signup');
       }
       user.save((err) => {
         if(err) { return next(err); }
