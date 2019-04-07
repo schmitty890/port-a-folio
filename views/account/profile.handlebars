@@ -1,68 +1,136 @@
-<div class="container">
-    <div class="pb-2 mt-2 mb-4 border-bottom">
-        <h3>Profile Information</h3></div>
-    <form action="/account/profile" method="POST">
-        <input type="hidden" name="_csrf">
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label font-weight-bold text-right" for="email">Email</label>
-            <div class="col-md-7">
-                <input class="form-control" type="email" name="email" id="email" value="{{hbsObject.user.email}}">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.7.4-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.4/css/bulma.min.css" />
+    <style type="text/css">
+        html,body {
+          font-family: 'Open Sans', serif;
+          font-size: 14px;
+          font-weight: 300;
+        }
+        .hero.is-success {
+          background: #F2F6FA;
+        }
+        .hero .nav, .hero.is-success .nav {
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+        .box {
+          margin-top: 5rem;
+        }
+        .avatar {
+          margin-top: -70px;
+          padding-bottom: 20px;
+        }
+        .avatar img {
+          padding: 5px;
+          background: #fff;
+          border-radius: 50%;
+          -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+          box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+        }
+        input {
+          font-weight: 300;
+        }
+        p {
+          font-weight: 700;
+        }
+        p.subtitle {
+          padding-top: 1rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="hero is-success is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-grey">Profile Information for {{hbsObject.user.firstName}}</h3>
+                    <p class="subtitle has-text-grey"></p>
+                    <div class="box">
+                        <figure class="avatar">
+                            <img src="https://placehold.it/128x128">
+                        </figure>
+                        <form action="/account/profile" method="POST">
+                            <div class="field">
+                                <div class="control">
+                                    <label class="" for="email">Email</label>
+                                    <input class="input is-large" type="email" name="email" id="email" value="{{hbsObject.user.email}}">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <label class="" for="firstName">First Name</label>
+                                    <input class="input is-large" type="firstName" name="firstName" id="firstName" value="{{hbsObject.user.firstName}}">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <label class="" for="lastName">Last Name</label>
+                                    <input class="input is-large" type="lastName" name="lastName" id="lastName" value="{{hbsObject.user.lastName}}">
+                                </div>
+                            </div>
+
+                            <button class="button is-block is-info is-large is-fullwidth" type="submit">Update Profile</button>
+                        </form>
+
+                        <h3 class="title has-text-grey" style="margin-top: 10px;">Change your password</h3>
+                        <form action="/account/password" method="POST">
+                            <input type="hidden" name="_csrf" value="oQaZYDXOZPySoyQLhjGNYQ7OkeOxeE1eUKz80=">
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label font-weight-bold text-right" for="password">New Password</label>
+                                <div class="col-md-7">
+                                    <input class="input is-large" type="password" name="password" id="password">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label font-weight-bold text-right" for="confirmPassword">Confirm Password</label>
+                                <div class="col-md-7">
+                                    <input class="input is-large" type="password" name="confirmPassword" id="confirmPassword">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="offset-sm-3 col-md-7 pl-2">
+                                    <button style="margin-top: 10px;" class="button is-block is-info is-large is-fullwidth" type="submit">Change Password</button>
+                                </div>
+                            </div>
+                        </form>
+
+
+                        <h3 class="title has-text-grey" style="margin-top: 10px;">Delete your account</h3>
+                        <form action="/account/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete your account?');">
+                            <div class="form-group">
+                                <p class="">You can delete your account, but keep in mind this action is irreversible.</p>
+                                <input type="hidden" name="_csrf" value="oQaZYDXOZPySoyQLhjGNYQ7OkeOxeE1eUKz80=">
+                                <div class="offset-sm-3 col-md-7 pl-2">
+                                    <button style="margin-top: 10px;" class="button is-block is-danger is-large is-fullwidth" type="submit">Delete my account</button>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                    <p class="has-text-grey">
+                        <a href="/logout">Logout | </a>
+                        <a href="/">Home | </a>
+                        <a href="/">Need Help?</a>
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label font-weight-bold text-right" for="firstName">Team Name</label>
-            <div class="col-md-7">
-                <input class="form-control" type="text" name="teamName" id="teamName" value="{{hbsObject.user.teamName}}">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label font-weight-bold text-right" for="firstName">Team Logo</label>
-            <div class="col-md-7">
-                <input class="form-control" type="text" name="logo" id="logo" value="{{hbsObject.user.logo}}">
-            </div>
-        </div>
-        {{!-- commenting out avatar for time being, may implement later --}}
-{{!--         <div class="form-group row">
-            <label class="col-md-3 col-form-label font-weight-bold text-right">Gravatar</label>
-            <div class="col-sm-4"><img class="profile" src="https://gravatar.com/avatar/405fa83edf86f248782789f09898bfaf?s=200&amp;d=retro" width="100" height="100"></div>
-        </div> --}}
-        <div class="form-group">
-            <div class="offset-sm-3 col-md-7 pl-2">
-                <button class="btn btn btn-primary" type="submit"><i class="fas fa-pencil-alt fa-sm"></i>Update Profile</button>
-            </div>
-        </div>
-    </form>
-    <div class="pb-2 mt-2 mb-4 border-bottom">
-        <h3>Change Password</h3></div>
-    <form action="/account/password" method="POST">
-        <input type="hidden" name="_csrf" value="oQaZYDXOZPySoyQLhjGNYQ7OkeOxeE1eUKz80=">
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label font-weight-bold text-right" for="password">New Password</label>
-            <div class="col-md-7">
-                <input class="form-control" type="password" name="password" id="password">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label font-weight-bold text-right" for="confirmPassword">Confirm Password</label>
-            <div class="col-md-7">
-                <input class="form-control" type="password" name="confirmPassword" id="confirmPassword">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="offset-sm-3 col-md-7 pl-2">
-                <button class="btn btn-primary" type="submit"><i class="fas fa-lock fa-sm"></i>Change Password</button>
-            </div>
-        </div>
-    </form>
-    <div class="pb-2 mt-2 mb-4 border-bottom">
-        <h3>Delete Account</h3></div>
-    <form action="/account/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete your account?');">
-        <div class="form-group">
-            <p class="offset-sm-3 col-md-7 pl-2">You can delete your account, but keep in mind this action is irreversible.</p>
-            <input type="hidden" name="_csrf" value="oQaZYDXOZPySoyQLhjGNYQ7OkeOxeE1eUKz80=">
-            <div class="offset-sm-3 col-md-7 pl-2">
-                <button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt fa-sm"></i>Delete my account</button>
-            </div>
-        </div>
-    </form>
-</div>
+    </section>
+</body>
+
+</html>
