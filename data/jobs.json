@@ -12,13 +12,22 @@
             "copy": "Employed as a VP, Cnslt Apps Prog, I am a front end engineer who primarily works within a client facing transfer of assets section of Merrill Lynch. Additionally, I collaborate in research and development efforts in a company style guide."
         },
         "responsibilities": {
-            "show": false,
+            "show": true,
             "copy": "front end engineer",
             "list": [
-                "Wrote and refactored gulp tasks to optimize css file output during build task runner",
-                "Train junior level developers on techniques on how to render UI views",
-                "Collaborate on a company wide style guide to showcase UI assets across platforms",
-                "Participated in daily standup, quad sessions, story grooming sessions, sprint planning and sprint retrospectives"
+                "Individual front end contributor to www.mymerrill.com and www.merrilledge.com ",
+                "Create UI mock ups from existing front end components.",
+                "Develop and refactor gulp tasks to optimize less files into finalized css files to be served in production.",
+                "Presented the idea of a companywide style guide at bi annual innovation summit.",
+                "Develop client side handlebar templates consuming data passed from backend developers.",
+                "Work with backend developers to get stub json data to mock service calls so development of handlebar templates can run in parallel of the backend api being built.",
+                "Develop css using less.",
+                "Structured less files to make imports easier to read/follow.",
+                "Created POC of a styleguide utilizing vuepress as a static site generator.",
+                "Participated in daily standup, quad sessions, story grooming sessions, sprint planning and sprint retrospectives.",
+                "Train junior developers about nodejs, expressjs, client side and server side handlebar template rendering, npm, jQuery.",
+                "Work with product owners to discuss UI options they have to when new features need to be implemented.",
+                "Utilize Rally/Jira for story tracking."
             ]
         }
     },{
