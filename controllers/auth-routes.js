@@ -7,10 +7,6 @@ const User = require('../models/User');
 const randomBytesAsync = promisify(crypto.randomBytes);
 const passportConfig = require('../config/passport');
 
-
-
-var SpotifyWebApi = require('spotify-web-api-node');
-
 module.exports = function (app) {
 
   /**
@@ -133,6 +129,7 @@ module.exports = function (app) {
    * Ensure user is authenticated in passport first then render account page
    */
   app.get('/spotify', passportConfig.isAuthenticated, function(req, res) {
+    var SpotifyWebApi = require('spotify-web-api-node');
     // credentials are optional
     var spotifyApi = new SpotifyWebApi({
       clientId: 'd64a622709394715aac35e04674d865e',
@@ -185,6 +182,23 @@ module.exports = function (app) {
         //     console.error(err);
         //   });
 
+        // Search tracks whose artist's name contains 'Kendrick Lamar', and track name contains 'Alright'
+        spotifyApi.searchTracks('track:Life is beautiful artist:Lil Peep')
+          .then(function(data) {
+            console.log('-------');
+            // console.log('Search tracks by "Alright" in the track name and "Kendrick Lamar" in the artist name');
+            console.log(data.body);
+            console.log('-------');
+            var items = data.body.tracks.items;
+            items.forEach(function(index) {
+              console.log('-------new item-------');
+              console.log(index);
+              console.log('-------end new item-------');
+            });
+          }, function(err) {
+            console.log('Something went wrong!', err);
+          });
+
         // // Get the authenticated user
         // spotifyApi.getMe()
         //   .then(function(data) {
@@ -194,14 +208,14 @@ module.exports = function (app) {
         //   });
 
         // // Get a playlist
-        spotifyApi.getPlaylist('0TFs4Jvyajd6B8yW5o4mPs')
-          .then(function(data) {
-            console.log('Some information about this playlist', data.body);
-            console.log('------------------------------------');
-            console.log(data.body.tracks.items);
-          }, function(err) {
-            console.log('Something went wrong!', err);
-          });
+        // spotifyApi.getPlaylist('0TFs4Jvyajd6B8yW5o4mPs')
+        //   .then(function(data) {
+        //     console.log('Some information about this playlist', data.body);
+        //     console.log('------------------------------------');
+        //     console.log(data.body.tracks.items);
+        //   }, function(err) {
+        //     console.log('Something went wrong!', err);
+        //   });
 
         // Get a user's playlists
         // spotifyApi.getUserPlaylists('schmitty890')

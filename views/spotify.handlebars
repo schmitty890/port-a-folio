@@ -19,33 +19,46 @@
             </div>
             <div class="navbar-menu" id="navMenu">
                 <div class="navbar-end">
-                    <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">Account</a>
-                    <div class="navbar-dropdown"><a class="navbar-item">Dashboard</a><a class="navbar-item">Profile</a><a class="navbar-item">Settings</a>
-                    <hr class="navbar-divider" />
-                    <div class="navbar-item">Logout</div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">Account</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">Dashboard</a>
+                        <a class="navbar-item">Profile</a>
+                        <a class="navbar-item">Settings</a>
+                        <a class="navbar-item">Logout</a>
+                    </div>
+                    </div>
                 </div>
-            </div>
-        </div>
     </div>
 </div>
 </nav>
 <section class="hero is-info">
 <div class="hero-body">
     <div class="container">
-        <div class="card" id="weather-search">
-            <div class="card-content">
-                <div class="content">
-                    <div class="control has-icons-left has-icons-right">
-                        <input class="input is-large" placeholder="search by zip code!" type="search"/>
-                        <span class="icon is-medium is-left">
-                            <i class="fa fa-search"></i>
-                        </span>
-                        <span class="icon is-medium is-right">
-                            <i class="fa fa-empire"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
+        <div class="field">
+          <div class="control">
+            <input class="input is-primary" type="text" placeholder="Primary input">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input is-info" type="text" placeholder="Info input">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input is-success" type="text" placeholder="Success input">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input is-warning" type="text" placeholder="Warning input">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input is-danger" type="text" placeholder="Danger input">
+          </div>
         </div>
     </div>
 </div>
@@ -89,7 +102,19 @@
 </footer>
 <!--====== Javascripts & Jquery ======-->
 <script src="public/assets/vendor/jquery-2.1.4.min.js"></script>
-{{!-- <script src="../js/bulma.js"></script> --}}
+<script>
+// bulma script to power hamburger menu
+// The following code is based off a toggle menu by @Bradcomp
+// source: https://gist.github.com/Bradcomp/a9ef2ef322a8e8017443b626208999c1
+(function() {
+    var burger = document.querySelector('.burger');
+    var menu = document.querySelector('#'+burger.dataset.target);
+    burger.addEventListener('click', function() {
+        burger.classList.toggle('is-active');
+        menu.classList.toggle('is-active');
+    });
+})();
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <!--This is our template. -->
