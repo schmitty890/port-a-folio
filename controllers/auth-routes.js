@@ -192,7 +192,8 @@ module.exports = function (app) {
             var items = data.body.tracks.items;
             items.forEach(function(index) {
               console.log('-------new item-------');
-              console.log(index);
+              // console.log(index);
+              console.log(index.name);
               console.log('-------end new item-------');
             });
           }, function(err) {
