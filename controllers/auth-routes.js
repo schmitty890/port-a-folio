@@ -183,22 +183,22 @@ module.exports = function (app) {
         //   });
 
         // Search tracks whose artist's name contains 'Kendrick Lamar', and track name contains 'Alright'
-        spotifyApi.searchTracks('track:Life is beautiful artist:Lil Peep')
-          .then(function(data) {
-            console.log('-------');
-            // console.log('Search tracks by "Alright" in the track name and "Kendrick Lamar" in the artist name');
-            console.log(data.body);
-            console.log('-------');
-            var items = data.body.tracks.items;
-            items.forEach(function(index) {
-              console.log('-------new item-------');
-              // console.log(index);
-              console.log(index.name);
-              console.log('-------end new item-------');
-            });
-          }, function(err) {
-            console.log('Something went wrong!', err);
-          });
+        // spotifyApi.searchTracks('track:Life is beautiful artist:Lil Peep')
+        //   .then(function(data) {
+        //     console.log('-------');
+        //     // console.log('Search tracks by "Alright" in the track name and "Kendrick Lamar" in the artist name');
+        //     console.log(data.body);
+        //     console.log('-------');
+        //     var items = data.body.tracks.items;
+        //     items.forEach(function(index) {
+        //       console.log('-------new item-------');
+        //       // console.log(index);
+        //       console.log(index.name);
+        //       console.log('-------end new item-------');
+        //     });
+        //   }, function(err) {
+        //     console.log('Something went wrong!', err);
+        //   });
 
         // // Get the authenticated user
         // spotifyApi.getMe()
@@ -219,14 +219,14 @@ module.exports = function (app) {
         //   });
 
         // Get a user's playlists
-        // spotifyApi.getUserPlaylists('schmitty890')
-        //   .then(function(data) {
-        //     console.log('Retrieved playlists', data.body);
-        //     console.log('--------------------------------');
-        //     console.log(data.body.items[0].external_urls);
-        //   },function(err) {
-        //     console.log('Something went wrong!', err);
-        //   });
+        spotifyApi.getUserPlaylists('schmitty890')
+          .then(function(data) {
+            console.log('Retrieved playlists', data.body);
+            console.log('--------------------------------');
+            console.log(data.body.items[0].external_urls);
+          },function(err) {
+            console.log('Something went wrong!', err);
+          });
 
         // Create a private playlist
         // spotifyApi.createPlaylist('My Cool Playlist', { 'public' : false })
