@@ -1,22 +1,141 @@
 {
     "projects": [{
-        "company": "first side proj",
-        "title" : "vp, cnslt apps prog - front end engineer",
-        "show": false,
-        "startDate" : "2018-10-24",
-        "endDate": "present",
-        "city": "pennington",
-        "state": "new jersey",
-        "logo": "https://yt3.ggpht.com/a-/AAuE7mDxHmqWBN1JUzVUXHKQRzKjYAhUO6u7R1oRBQ=s900-mo-c-c0xffffffff-rj-k-no",
+        "company": "Blog",
+        "title" : "Blog",
+        "show": true,
+        "startDate" : "http://blog.thejasonschmitt.com/",
+        "endDate": "",
+        "city": "https://github.com/schmitty890/logit",
+        "state": "",
+        "logo": "./public/assets/images/gatsby.png",
         "desc": {
             "show": true,
-            "copy": "a front end dev."
+            "copy": "My personal little minimalist blog that talks about JavaScript, HTML and CSS."
         },
         "responsibilities": {
             "show": true,
-            "copy": "front end engineer",
+            "copy": "features",
             "list": [
-                ""
+                "react",
+                "gastby.js"
+            ]
+        }
+    }, {
+        "company": "Homestead",
+        "title" : "Homestead",
+        "show": true,
+        "startDate" : "http://homestead.thejasonschmitt.com/",
+        "endDate": "",
+        "city": "https://github.com/schmitty890/homestead",
+        "state": "",
+        "logo": "./public/assets/images/homestead.png",
+        "desc": {
+            "show": true,
+            "copy": "With Homestead, community members may sign up, plan and publish events, post classified, participate in resource sharing programs, and find necessary information from/exchange messages with community managers."
+        },
+        "responsibilities": {
+            "show": true,
+            "copy": "features",
+            "list": [
+                "Product list pages and filtered product list pages",
+                "Slickjs Carousels built with products pulled from a mysql database",
+                "Real time event calendar",
+                "Node.js",
+                "MySQL",
+                "Express.js",
+                "Handlebars.js",
+                "Moment.js",
+                "Bootstrap",
+                "JawsDB",
+                "Sequelize",
+                "Passport",
+                "Gulp",
+                "Axios",
+                "Slick.js",
+                "FlatPickr",
+                "FullCalendar.io",
+                "HTML5, CSS3, SCSS, Javascript, and jQuery"
+            ]
+        }
+    }, {
+        "company": "NHL Web Scraper",
+        "title" : "NHL Web Scraper",
+        "show": true,
+        "startDate" : "http://nhl.thejasonschmitt.com/",
+        "endDate": "",
+        "city": "https://github.com/schmitty890/nhl-scraper",
+        "state": "",
+        "logo": "./public/assets/images/nhl.png",
+        "desc": {
+            "show": true,
+            "copy": "A web app that lets users scrape, view, and leave comments on the latest NHL.com news articles. The app levarages MongoDB with Mongoose for data management and Cheerio to scrape data."
+        },
+        "responsibilities": {
+            "show": true,
+            "copy": "features",
+            "list": [
+                "Node.js",
+                "MongoDB",
+                "Mongoose",
+                "Express.js",
+                "Handlebars.js",
+                "body-parser",
+                "axios",
+                "Materialize",
+                "Cheerio",
+                "HTML5, CSS3, Javascript"
+            ]
+        }
+    }, {
+        "company": "the office react memory game",
+        "title" : "the office react memory game",
+        "show": true,
+        "startDate" : "http://theoffice-react.thejasonschmitt.com/",
+        "endDate": "present",
+        "city": "https://github.com/schmitty890/theoffice-clicky",
+        "state": "",
+        "logo": "./public/assets/images/theoffice.png",
+        "desc": {
+            "show": true,
+            "copy": "There are 24 characters here from The Office. Test your memory and click on each character once to win the game. But DO NOT click on the same character more than once!"
+        },
+        "responsibilities": {
+            "show": true,
+            "copy": "features",
+            "list": [
+                "react"
+            ]
+        }
+    }, {
+        "company": "Pet Monitor",
+        "title" : "Pet Monitor",
+        "show": false,
+        "startDate" : "http://pet-monitor.thejasonschmitt.com/",
+        "endDate": "",
+        "city": "https://github.com/schmitty890/pet-monitor",
+        "state": "",
+        "logo": "./public/assets/images/petmonitor.png",
+        "desc": {
+            "show": true,
+            "copy": "description of project"
+        },
+        "responsibilities": {
+            "show": true,
+            "copy": "features",
+            "list": [
+                "Node.js",
+                "MySQL",
+                "Express.js",
+                "Handlebars.js",
+                "Moment.js",
+                "Bootstrap",
+                "JawsDB",
+                "Sequelize",
+                "Passport",
+                "Gulp",
+                "Axios",
+                "FlatPickr",
+                "HTML5, CSS3, SCSS, Javascript, and jQuery"
             ]
         }
     }]

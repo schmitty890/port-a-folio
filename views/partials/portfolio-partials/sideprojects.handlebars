@@ -1,5 +1,5 @@
 <!-- ==== sideprojects Section Start ==== -->
-<section class="resume-section fix" id="resume">
+<section class="resume-section fix" id="sideprojects">
   <div class="container pt100 pb90">
     <div class="section-title mb100">
         <h2>Side projects</h2>
@@ -12,17 +12,17 @@
           <div class="resume-item row">
             <div class="col-md-6 col-sm-6 resume-left wow fadeInUp" data-wow-delay="0.15s" style="visibility: hidden; animation-delay: 0.15s; animation-name: none;">
               <div>
-              <a href="#"><img style="height: 50px; width: 50px" src="{{this.logo}}"></a>
-                <h2 class="capitalize">{{this.company}}</h2>
-                <p>{{momentFromNowTime this.startDate}} - {{momentFromNowTime this.endDate}}</p>
-                <p>months spent: {{monthsBetweenDates this.startDate this.endDate}} </p>
-                <p>days spent: {{daysBetweenDates this.startDate this.endDate}} </p>
-                <p class="capitalize">{{this.city}}, {{this.state}}</p>
+                <a href={{this.startDate}} target="_blank"><img style="height: 50px; width: 50px" src="{{this.logo}}">
+                  <h2 class="capitalize">{{this.company}}</h2>
+                  <p><a href={{this.startDate}} target="_blank">Visit Project: {{this.title}}</a></p>
+                  <p class="capitalize"><a href={{this.city}} target="_blank">Visit Github Repo</a></p>
+                </a>
               </div>
             </div>
             <div class="col-md-6 col-sm-6 resume-right">
               <h2 class="capitalize">{{this.title}}</h2>
               <p>{{this.desc.copy}}<br><br></p>
+              <p>{{this.responsibilities.copy}}<br><br></p>
               <ul>
                 {{#each responsibilities.list}}
                   <li class="list-unstyled margin-bottom-10">{{this}}</li>
