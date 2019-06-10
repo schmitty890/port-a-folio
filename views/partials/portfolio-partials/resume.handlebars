@@ -8,30 +8,32 @@
         <!-- Resume Item -->
         <div class="resume-js col-md-offset-2 col-md-9">
         {{#each hbsObject.pageData.jobs}}
-          <div class="resume-item row">
-            <div class="col-md-6 col-sm-6 resume-left wow fadeInUp" data-wow-delay="0.15s" style="visibility: hidden; animation-delay: 0.15s; animation-name: none;">
-              <div>
-              <a href="#"><img style="height: 50px; width: 50px" src="{{this.logo}}"></a>
-                <h2 class="capitalize">{{this.company}}</h2>
-                {{!-- <p>{{this.startDate}} - {{this.endDate}}</p> --}}
-                <p>{{momentFromNowTime this.startDate}} - {{momentFromNowTime this.endDate}}</p>
-                {{!-- <p>months spent: {{monthsBetweenDates this.startDate this.endDate}} </p> --}}
-                {{!-- <p>days spent: {{daysBetweenDates this.startDate this.endDate}} </p> --}}
-                <p class="capitalize">{{this.city}}, {{this.state}}</p>
+          {{#if this.show}}
+            <div class="resume-item row">
+              <div class="col-md-6 col-sm-6 resume-left wow fadeInUp" data-wow-delay="0.15s" style="visibility: hidden; animation-delay: 0.15s; animation-name: none;">
+                <div>
+                <a href="#"><img style="height: 50px; width: 50px" src="{{this.logo}}"></a>
+                  <h2 class="capitalize">{{this.company}}</h2>
+                  {{!-- <p>{{this.startDate}} - {{this.endDate}}</p> --}}
+                  <p>{{momentFromNowTime this.startDate}} - {{momentFromNowTime this.endDate}}</p>
+                  {{!-- <p>months spent: {{monthsBetweenDates this.startDate this.endDate}} </p> --}}
+                  {{!-- <p>days spent: {{daysBetweenDates this.startDate this.endDate}} </p> --}}
+                  <p class="capitalize">{{this.city}}, {{this.state}}</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 resume-right">
+                <h2 class="capitalize">{{this.title}}</h2>
+                <p>{{this.desc.copy}}<br><br></p>
+                {{#if this.responsibilities.show}}
+                  <ul>
+                    {{#each responsibilities.list}}
+                      <li class="list-unstyled margin-bottom-10">{{this}}</li>
+                    {{/each}}
+                  </ul>
+                {{/if}}
               </div>
             </div>
-            <div class="col-md-6 col-sm-6 resume-right">
-              <h2 class="capitalize">{{this.title}}</h2>
-              <p>{{this.desc.copy}}<br><br></p>
-              {{#if this.responsibilities.show}}
-                <ul>
-                  {{#each responsibilities.list}}
-                    <li class="list-unstyled margin-bottom-10">{{this}}</li>
-                  {{/each}}
-                </ul>
-              {{/if}}
-            </div>
-          </div>
+          {{/if}}
         {{/each}}
         </div>
     </div>
