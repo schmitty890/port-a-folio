@@ -1,5 +1,28 @@
 {
     "projects": [{
+        "company": "Weather",
+        "title" : "Weather MERN",
+        "show": true,
+        "startDate" : "http://weather.thejasonschmitt.com/",
+        "endDate": "",
+        "city": "https://github.com/schmitty890/weather",
+        "state": "",
+        "logo": "./public/assets/images/weather.png",
+        "desc": {
+            "show": true,
+            "copy": "A weather app that utilizes the MERN stack."
+        },
+        "responsibilities": {
+            "show": true,
+            "copy": "features",
+            "list": [
+                "mongodb",
+                "express.js",
+                "react",
+                "node.js"
+            ]
+        }
+    },{
         "company": "Blog",
         "title" : "Blog",
         "show": true,
