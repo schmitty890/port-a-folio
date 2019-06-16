@@ -19,7 +19,9 @@
                 "mongodb",
                 "express.js",
                 "react",
-                "node.js"
+                "node.js",
+                "react-bootstrap",
+                "CSS modules"
             ]
         }
     },{
