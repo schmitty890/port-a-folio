@@ -13,7 +13,7 @@
             "copy": "Employed as a VP, Cnslt Apps Prog, I am a front end engineer who primarily works within a client facing transfer of assets section of Merrill Lynch. Additionally, I collaborate in research and development efforts in a company style guide."
         },
         "responsibilities": {
-            "show": false,
+            "show": true,
             "copy": "front end engineer",
             "list": [
                 "Individual front end contributor to www.mymerrill.com and www.merrilledge.com ",
@@ -45,7 +45,7 @@
             "copy": "Employed as a JavaScript Developer, I am responsible for delivering front end web solutions for clients of Brooks Bell using primarily Adobe Target, as well as Optimizely and Monetate. Serving as the tech lead of Adobe Target mentoring a team of junior developers."
         },
         "responsibilities": {
-            "show": false,
+            "show": true,
             "copy": "a-b test developer",
             "list": [
                 "Facilitated Adobe Target campaign launches",
@@ -74,7 +74,7 @@
             "copy": "Employed as a software developer, I was responsible for daily content updates, projects, a/b test development and analytics."
         },
         "responsibilities": {
-            "show": false,
+            "show": true,
             "copy": "front end developer on the fed team",
             "list": [
                 "Contributor to a team of developers and worked along side business partners to successfully implement an A/B testing process",
