@@ -50,21 +50,6 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    {{!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> --}}
-    {{!-- <script src="https://unpkg.com/vuex"></script> --}}
-    {{!-- <style type="text/css">
-      .box {
-        height: 200px;
-        width: 200px; 
-        text-align: center;
-      }
-      .red {
-        background-color: red;
-      }
-      .green {
-        background-color: green;
-      }
-    </style>  --}}
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -72,31 +57,5 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     {{{body}}}
-  {{!-- <div id="vapp">
-      <colored-box class="red" v-show="display == 'redbox'"></colored-box>
-      <colored-box class="green" v-show="display == 'greenbox'"></colored-box>
-  </div>
-<!-- Our View App goes at the end of the document -->
-<script>
-Vue.component('ColoredBox', {
-  template: "<div class=\"box\"><button v-on:click=\"toggleMe()\">Toggle Now</button></div>",
-  methods: {
-    toggleMe() {
-      this.$root.toggleBox()
-    }
-  }
-})
-const vueApp = new Vue({
-  el: '#vapp',
-  data: { 
-   display: 'redbox' 
-  },
-  methods: {
-    toggleBox() {
-      this.display == 'redbox' ? this.display = 'greenbox' : this.display = 'redbox'
-    }
-  }
-})
-</script> --}}
   </body>
 </html>
