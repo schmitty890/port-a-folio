@@ -27,7 +27,7 @@
     "express-session": "^1.15.6",
     "express-validator": "^5.3.1",
     "fs": "0.0.1-security",
-    "googleapis": "^27.0.0",
+    "googleapis": "^39.1.0",
     "gulp": "^3.9.1",
     "lusca": "^1.6.1",
     "moment": "^2.24.0",
